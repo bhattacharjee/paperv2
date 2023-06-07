@@ -28,7 +28,7 @@ class NNModel:
         self.model.compile(
             optimizer="adam",
             loss="binary_crossentropy",
-            metrics=[tf.keras.metrics.BinaryAccuracy(), tf.keras.metrica.AUC()],
+            metrics=[tf.keras.metrics.BinaryAccuracy(), tf.keras.metrics.AUC()],
         )
 
     def fit(self, X, y):
