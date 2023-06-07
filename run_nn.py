@@ -32,6 +32,7 @@ from sklearn.metrics import (
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis as QDA
+from nn import *
 
 # import dotenv
 
@@ -319,6 +320,8 @@ def evaluate_features_folded(
             f"---> Running iteration #{nid:02d} for {folds} fold verification."
         )
         pline, y_pred_fn = get_pipeline(X, n_jobs=n_jobs)
+        pline = NNModel(input_dim=X.shape[-1])
+        y_pred_fn = lambda x: x
         X_train, X_test = X[train_idx], X[test_idx]
         y_train, y_test = y[train_idx], y[test_idx]
         pline.fit(X_train, y_train)
@@ -335,7 +338,7 @@ def evaluate_features_folded(
             {
                 "y_true": y_test,
                 "y_pred": y_pred,
-                "y_pred_proba": y_predict_proba[:, 1],
+                "y_pred_proba": y_predict_proba,
             }
         )
         df2.to_csv(save_filename)
@@ -352,6 +355,7 @@ def evaluate_features_regular(
     annotation_columns: List[str],
     n_jobs: int,
 ) -> Tuple[bool, List[float]]:
+    assert False
     colnames = [c for c in feature_column_names if "is_encrypted" not in c]
     colnames = [c for c in colnames if not c.startswith("an_")]
     X = data[colnames].to_numpy()
@@ -667,8 +671,8 @@ def main() -> None:
         )
 
         # TODO: uncomment this if restarting. May need to modify the list
-        if fsname in {"baseline-only", "advanced-only", "fourier-only"}:
-            continue
+        # if fsname in {"baseline-only", "advanced-only", "fourier-only"}:
+        #     continue
         # TODO: uncomment if required
         if os.path.exists(temp_output_dir) and os.path.isdir(temp_output_dir):
             logger.info(f"{temp_output_dir} exists, skipping feature set")
