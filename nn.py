@@ -45,8 +45,8 @@ class NNModel:
             verbose="silent",
             validation_split=0.1,
             shuffle=True,
-            batch_size=32,
-            epochs=10,
+            batch_size=128,
+            epochs=5,
             callbacks=[tf.keras.callbacks.EarlyStopping(monitor="loss", patience=2)],
         )
 
