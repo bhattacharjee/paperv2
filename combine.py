@@ -44,10 +44,7 @@ def load_results(inp_directory: str) -> pd.DataFrame:
             lines = [l.strip() for l in f.readlines()]
             saveline = None
             for line in lines:
-                if (
-                    "__main__:evaluate" in line
-                    and "combination_json = " in line
-                ):
+                if "__main__:evaluate" in line and "combination_json = " in line:
                     saveline = line
                     break
             return json.loads(line.split("=")[1].strip())
@@ -101,7 +98,5 @@ def main(run_as_prog: bool = False) -> None:
 
 
 if __name__ == "__main__":
-    logger.add(
-        "./combine_dfs.log", backtrace=True, diagnose=True, level="INFO"
-    )
+    logger.add("./combine_dfs.log", backtrace=True, diagnose=True, level="INFO")
     main(True)

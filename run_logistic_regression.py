@@ -94,7 +94,7 @@ def get_columns_and_types(thisdf: pd.DataFrame) -> Dict[str, List[str]]:
         "fourier.stat.1byte.chisq",
         "fourier.stat.1byte.moment.2",
         "fourier.stat.1byte.moment.3",
-        "fourier.stat.1byte.moment.4"
+        "fourier.stat.1byte.moment.4",
     ]
 
     baseline_and_advanced = list(set(baseline_columns + advanced_columns))
@@ -106,7 +106,9 @@ def get_columns_and_types(thisdf: pd.DataFrame) -> Dict[str, List[str]]:
     baseline_advanced_fourier = list(
         set(baseline_columns + advanced_columns + fourier_columns)
     )
-    baseline_advanced_and_fourier_min = list(set(baseline_columns + advanced_columns + fourier_min_columns))
+    baseline_advanced_and_fourier_min = list(
+        set(baseline_columns + advanced_columns + fourier_min_columns)
+    )
 
     logger.info(
         {
@@ -174,25 +176,19 @@ def annotate_df_with_additional_fields(
         dataframe["an_v1_encrypted"] = 1
     else:
         dataframe["an_v1_encrypted"] = 0
-    dataframe["an_v1_encrypted"] = dataframe["an_v1_encrypted"].astype(
-        np.bool_
-    )
+    dataframe["an_v1_encrypted"] = dataframe["an_v1_encrypted"].astype(np.bool_)
 
     if "v2" in name:
         dataframe["an_v2_encrypted"] = 1
     else:
         dataframe["an_v2_encrypted"] = 0
-    dataframe["an_v2_encrypted"] = dataframe["an_v2_encrypted"].astype(
-        np.bool_
-    )
+    dataframe["an_v2_encrypted"] = dataframe["an_v2_encrypted"].astype(np.bool_)
 
     if "v3" in name:
         dataframe["an_v3_encrypted"] = 1
     else:
         dataframe["an_v3_encrypted"] = 0
-    dataframe["an_v3_encrypted"] = dataframe["an_v3_encrypted"].astype(
-        np.bool_
-    )
+    dataframe["an_v3_encrypted"] = dataframe["an_v3_encrypted"].astype(np.bool_)
 
     def is_webp(filename: str) -> int:
         return 1 if ".webp" in filename else 0
@@ -223,8 +219,7 @@ def load_data(input_directory: str) -> pd.DataFrame:
     }
     logger.info("Annotating dataframes with additional fields")
     dataframes = {
-        f: annotate_df_with_additional_fields(f, df)
-        for f, df in dataframes.items()
+        f: annotate_df_with_additional_fields(f, df) for f, df in dataframes.items()
     }
 
     logger.info("Combining dataframes into a single dataframe")
@@ -310,9 +305,7 @@ def evaluate_features_folded(
             total=folds,
         )
     ):
-        logger.info(
-            f"---> Running iteration #{nid:02d} for {folds} fold verification."
-        )
+        logger.info(f"---> Running iteration #{nid:02d} for {folds} fold verification.")
         pline, y_pred_fn = get_pipeline(X, n_jobs=8)
         X_train, X_test = X[train_idx], X[test_idx]
         y_train, y_test = y[train_idx], y[test_idx]
@@ -321,9 +314,7 @@ def evaluate_features_folded(
         y_pred_final = y_pred_fn(y_pred)
         y_predict_proba = pline.predict_proba(X_test)
         metrics.append(get_metrics(y_test, y_pred_final))
-        logger.opt(colors=True).info(
-            f"<magenta>another fold done. {metrics[-1]}</>"
-        )
+        logger.opt(colors=True).info(f"<magenta>another fold done. {metrics[-1]}</>")
 
         save_filename = output_directory + os.path.sep + get_save_filename()
         df2 = pd.DataFrame(
@@ -412,9 +403,9 @@ def trim_dataset(
     logger.debug(f"1 ===> {len(df)}")
 
     if exclude_plaintext_base32:
-        selector = ~(df["is_encrypted"].astype(np.bool_)) & df[
-            "an_is_base32"
-        ].astype(np.bool_)
+        selector = ~(df["is_encrypted"].astype(np.bool_)) & df["an_is_base32"].astype(
+            np.bool_
+        )
         df = df[~selector]
     logger.debug(f"2 ===> {len(df)}")
 
@@ -429,9 +420,9 @@ def trim_dataset(
     logger.debug(f"4 ===> {len(df)}")
 
     if exclude_encrypted_base32:
-        selector = df["is_encrypted"].astype(np.bool_) & df[
-            "an_is_base32"
-        ].astype(np.bool_)
+        selector = df["is_encrypted"].astype(np.bool_) & df["an_is_base32"].astype(
+            np.bool_
+        )
         df = df[~selector]
     logger.debug(f"5 ===> {len(df)}")
 
@@ -461,9 +452,7 @@ def trim_dataset(
     except Exception as e:
         encrypted_count = 0
 
-    logger.info(
-        f"Encrypted: {encrypted_count} Non-Encrypted: {non_encrypted_count}"
-    )
+    logger.info(f"Encrypted: {encrypted_count} Non-Encrypted: {non_encrypted_count}")
 
     gc_collect()
 
@@ -558,9 +547,7 @@ def evaluate(
                 diagnose=True,
                 level="INFO",
             )
-            logger.info(
-                f"*** Processing Combination {n:02d} combination = {message}"
-            )
+            logger.info(f"*** Processing Combination {n:02d} combination = {message}")
             comb_json_str = json.dumps(
                 {e1: e2 for e1, e2 in zip(list_of_combinations, combination)}
             )
@@ -605,13 +592,9 @@ def run_model(
     assert input_directory
     assert output_directory
 
-    if not os.path.exists(input_directory) or not os.path.isdir(
-        input_directory
-    ):
+    if not os.path.exists(input_directory) or not os.path.isdir(input_directory):
         raise Exception(f"Path {input_directory} does not exist")
-    if not os.path.exists(output_directory) or not os.path.isdir(
-        output_directory
-    ):
+    if not os.path.exists(output_directory) or not os.path.isdir(output_directory):
         os.mkdir(output_directory)
 
     log_file = f"{output_directory}{os.path.sep}log.log"
@@ -621,9 +604,7 @@ def run_model(
         os.unlink(f"{log_file}.debug.log")
     logger.remove()
     logger.add(log_file, backtrace=True, diagnose=True, level="INFO")
-    logger.add(
-        f"{log_file}.debug.log", backtrace=True, diagnose=True, level="DEBUG"
-    )
+    logger.add(f"{log_file}.debug.log", backtrace=True, diagnose=True, level="DEBUG")
     logger.add(sys.stderr, backtrace=True, diagnose=True, level="ERROR")
     logger.opt(colors=True).info(
         f"<blue>Running with {output_directory=} {output_directory=}"
@@ -647,9 +628,7 @@ def run_model(
         # if fsname in {"baseline-only", "advanced-only", "fourier-only"}:
         #    continue
         temp_output_dir = f"{output_directory}" + os.path.sep + f"{fsname}"
-        print_text = (
-            f"******** Processing {fsname} and writing into {temp_output_dir}"
-        )
+        print_text = f"******** Processing {fsname} and writing into {temp_output_dir}"
         logger.opt(colors=True).info(f"<green>{print_text}</>")
         logger.opt(colors=True).info(f"<green>{'-' * len(print_text)}</>")
 
@@ -681,9 +660,7 @@ def run_model(
         logger.remove(logid)
 
         t2 = time.perf_counter()
-        logger.info(
-            f"{n:02d}. Completed running feature {fsname} in {t2 - t1} seconds"
-        )
+        logger.info(f"{n:02d}. Completed running feature {fsname} in {t2 - t1} seconds")
         logger.opt(colors=True).info(f"<magenta>{fsname=} {metrics=}</>")
         print("*" * 80)
         print(f"{fsname=} {metrics=}")
@@ -728,9 +705,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    run_model(
-        args.n_jobs, args.n_folds, args.input_directory, args.output_directory
-    )
+    run_model(args.n_jobs, args.n_folds, args.input_directory, args.output_directory)
 
 
 if "__main__" == __name__:

@@ -28,9 +28,7 @@ tpr = partial(get_confusion_matrix_unraveled, which_rate="tpr")
 tnr = partial(get_confusion_matrix_unraveled, which_rate="tnr")
 
 stats = {
-    "Accuracy": (
-        lambda df: metrics.accuracy_score(df["y_true"], df["y_pred"])
-    ),
+    "Accuracy": (lambda df: metrics.accuracy_score(df["y_true"], df["y_pred"])),
     "Balanced-Accuracy": (
         lambda df: metrics.balanced_accuracy_score(df["y_true"], df["y_pred"])
     ),
@@ -38,14 +36,10 @@ stats = {
     "TNR": (lambda df: tnr(df["y_true"], df["y_pred"])),
     "FPR": (lambda df: fpr(df["y_true"], df["y_pred"])),
     "FNR": (lambda df: fnr(df["y_true"], df["y_pred"])),
-    "Precision": (
-        lambda df: metrics.precision_score(df["y_true"], df["y_pred"])
-    ),
+    "Precision": (lambda df: metrics.precision_score(df["y_true"], df["y_pred"])),
     "Recall": (lambda df: metrics.recall_score(df["y_true"], df["y_pred"])),
     "F1-Score": (lambda df: metrics.f1_score(df["y_true"], df["y_pred"])),
-    "AUROC": (
-        lambda df: metrics.roc_auc_score(df["y_true"], df["y_pred_proba"])
-    ),
+    "AUROC": (lambda df: metrics.roc_auc_score(df["y_true"], df["y_pred_proba"])),
 }
 
 
@@ -64,9 +58,7 @@ def get_order_number(name: str) -> int:
         "baseline-advanced-and-fourier-min",
     ]
 
-    order_of_columns = {
-        name1: order for order, name1 in enumerate(order_of_columns)
-    }
+    order_of_columns = {name1: order for order, name1 in enumerate(order_of_columns)}
 
     # Can be an alias in some runs
     order_of_columns["fourier-min"] = order_of_columns["fourier-min-only"]
@@ -183,11 +175,7 @@ def print_latex(
         ]
     ]
     df = df[
-        [
-            c
-            for c in df.columns
-            if c not in [("Precision", "std"), ("Recall", "std")]
-        ]
+        [c for c in df.columns if c not in [("Precision", "std"), ("Recall", "std")]]
     ]
     df = df[
         [
@@ -199,9 +187,7 @@ def print_latex(
 
     print()
     if highlight_min_max:
-        df_str = df.to_latex(
-            formatters=formatters, escape=False, index_names=False
-        )
+        df_str = df.to_latex(formatters=formatters, escape=False, index_names=False)
     else:
         df_str = df.to_latex(index_names=False)
     print(df_str)
@@ -211,9 +197,7 @@ def print_latex(
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", type=str, required=True)
-    parser.add_argument(
-        "-tl", "--to-latex", action="store_true", default=False
-    )
+    parser.add_argument("-tl", "--to-latex", action="store_true", default=False)
     parser.add_argument(
         "-hm", "--highlight-min-max", action="store_true", default=False
     )
@@ -250,12 +234,8 @@ def main():
         )
 
     if args.to_parquet:
-        comparisons["grouped_stats"].to_parquet(
-            f"{args.to_parquet}.grouped.parquet"
-        )
-        comparisons["combined_stats"].to_parquet(
-            f"{args.to_parquet}.combined.parquet"
-        )
+        comparisons["grouped_stats"].to_parquet(f"{args.to_parquet}.grouped.parquet")
+        comparisons["combined_stats"].to_parquet(f"{args.to_parquet}.combined.parquet")
 
 
 if "__main__" == __name__:

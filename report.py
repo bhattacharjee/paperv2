@@ -72,10 +72,7 @@ def load_results(inp_directory: str) -> pd.DataFrame:
             lines = [l.strip() for l in f.readlines()]
             saveline = None
             for line in lines:
-                if (
-                    "__main__:evaluate" in line
-                    and "combination_json = " in line
-                ):
+                if "__main__:evaluate" in line and "combination_json = " in line:
                     saveline = line
                     break
             return json.loads(line.split("=")[1].strip())
@@ -117,9 +114,7 @@ def calculate_single_value_metrics(df: pd.DataFrame, feature_sets):
         except Exception as e:
             return 1.1
 
-    for feature in tqdm.tqdm(
-        feature_sets, desc="Calculating single value metrics"
-    ):
+    for feature in tqdm.tqdm(feature_sets, desc="Calculating single value metrics"):
         tdf = df[df["feature_set"] == feature]
         dfdict[feature] = [
             get_metric_checked(fn, tdf["y_true"], tdf["y_pred"])
@@ -150,18 +145,14 @@ def plot_confusion_matrix(
             (df["y_pred"] > 0.5).astype(np.bool_),
             labels=[True, False],
         )
-        cf = ConfusionMatrixDisplay(
-            confusion_matrix=cm, display_labels=[True, False]
-        )
+        cf = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=[True, False])
         plt.show()
 
 
 def main() -> None:
     parser = argparse.ArgumentParser("Generate report from runs")
     parser.add_argument("-i", "--input-directory", type=str, required=True)
-    parser.add_argument(
-        "-roc", "--plot-roc", action="store_true", default=False
-    )
+    parser.add_argument("-roc", "--plot-roc", action="store_true", default=False)
     parser.add_argument(
         "-cm", "--plot-confusion-matrix", action="store_true", default=False
     )
@@ -171,9 +162,7 @@ def main() -> None:
     feature_sets = get_feature_sets(df["feature_set"])
     df = df[["y_true", "y_pred", "feature_set"]]
     single_value_metrics = calculate_single_value_metrics(df, feature_sets)
-    single_value_metrics.to_csv(
-        args.input_directory + os.path.sep + "metrics.csv"
-    )
+    single_value_metrics.to_csv(args.input_directory + os.path.sep + "metrics.csv")
 
     if args.plot_roc:
         out_filename = args.input_directory + os.path.sep + "roc.png"
