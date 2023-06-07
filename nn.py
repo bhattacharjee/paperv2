@@ -16,6 +16,8 @@ class NNModel:
 
     def __init__(self, input_dim: int = -1):
         assert input_dim > 0
+        tf.random.set_seed(0)
+        np.random.seed(0)
         self.scalar = MinMaxScaler()
         self.model = tf.keras.models.Sequential(
             [
@@ -40,7 +42,7 @@ class NNModel:
         self.model.fit(
             x=X,
             y=y,
-            verbose="auto",
+            verbose="silent",
             validation_split=0.1,
             shuffle=True,
             batch_size=32,
