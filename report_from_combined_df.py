@@ -3,6 +3,7 @@ from sklearn.metrics import precision_score, accuracy_score, roc_auc_score
 from dataclasses import dataclass
 from typing import Any
 from functools import partial
+import argparse
 
 
 @dataclass
@@ -17,6 +18,7 @@ metrics = [
 ]
 
 def read_csv(csv_file: str) -> pd.DataFrame:
+
     # First find all the columns and just select which columns we don't need
     columns = pd.read_csv(csv_file, nrows=1).columns
     columns = [str(c) for c in columns]
@@ -43,4 +45,13 @@ def create_report(csv_file: str):
     return metrics_df
 
 
-print(create_report("combined.csv.gz"))
+def main() -> None:
+    parser = argparse.ArgumentParser(prog = "GenReport", 
+                                     description="From a combined dataframe, create a report")
+    parser.add_argument("-f", "--file", type=str, required=True)
+    args = parser.parse_args()
+    print(create_report(args.file))
+
+
+if "__main__" == __name__:
+    main()
