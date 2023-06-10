@@ -86,6 +86,13 @@ def load_results(inp_directory: str) -> pd.DataFrame:
 
     return df
 
+def get_parquet_filename(csv_filename):
+    csv_filename = csv_filename.lower()
+    if not csv_filename.endswith(".csv") and not csv_filename.endswith(".csv.gz"):
+        raise Exception(f"{csv_filename=} is not a valid filename.")
+    basename = csv_filename[:-4] if csv_filename.endswith(".csv") else csv_filename[:-7]
+    return f"{basename}.parquet.gz"
+        
 
 def main(run_as_prog: bool = False) -> None:
     parser = argparse.ArgumentParser("Generate report from runs")
@@ -98,6 +105,8 @@ def main(run_as_prog: bool = False) -> None:
     df = load_results(args.input_directory)
     logger.info("Saving output file...")
     df.to_csv(args.output_file_name)
+    logger.info("Saving parquet output file...")
+    df.to_parquet(get_parquet_filename(args.output_file_name))
     logger.info("OK.")
 
 
