@@ -81,6 +81,10 @@ def read_csv(csv_file: str) -> pd.DataFrame:
 
     if parquet_filename and os.path.exists(parquet_filename):
         raise Exception(f"Parquet {parquet_filename} already exists. Remove and rerun.")
+    
+    # TODO: Needs some cleaning up.
+    # 1. Find a better way to deal with read_parquet and read_csv
+    # 2. In read_pandas, find a way to read only the first row
 
     # First find all the columns and just select which columns we don't need
     if read_fn == pd.read_csv:
