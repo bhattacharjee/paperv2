@@ -37,18 +37,22 @@ def get_counter() -> int:
 def load_results(inp_directory: str) -> pd.DataFrame:
     dataframes = []
 
-    @lru_cache(maxsize=128)
     def get_configuration_json(lfilename: str) -> Any:
+        
+        @lru_cache(maxsize=128)
+        def get_configuration_json_internal(logfilename: str) -> Any:
+            with open(logfilename) as f:
+                lines = [l.strip() for l in f.readlines()]
+                saveline = None
+                for line in lines:
+                    if "__main__:evaluate" in line and "combination_json = " in line:
+                        saveline = line
+                        break
+                return json.loads(line.split("=")[1].strip())
+            raise Exception("Could not find the configuration json")
+
         logfilename = os.path.dirname(lfilename) + os.path.sep + "log.log"
-        with open(logfilename) as f:
-            lines = [l.strip() for l in f.readlines()]
-            saveline = None
-            for line in lines:
-                if "__main__:evaluate" in line and "combination_json = " in line:
-                    saveline = line
-                    break
-            return json.loads(line.split("=")[1].strip())
-        raise Exception("Could not find the configuration json")
+        return get_configuration_json_internal(logfilename)
 
     for ldirname in tqdm.tqdm(
         glob.glob(f"{inp_directory}{os.path.sep}*-*"), desc="Loading datasets"
