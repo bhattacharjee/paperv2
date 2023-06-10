@@ -71,7 +71,7 @@ def csv_read_fn(csv_file: str) -> Any:
 
 def read_csv(csv_file: str) -> pd.DataFrame:
     parquet_filename = ""
-    read_fn = csv_read_fn()
+    read_fn = csv_read_fn(csv_file)
 
     if csv_file.lower().endswith(".csv") or csv_file.lower().endswith(".csv.gz"):
         if csv_file.lower().endswith(".csv"):
@@ -83,12 +83,18 @@ def read_csv(csv_file: str) -> pd.DataFrame:
         raise Exception(f"Parquet {parquet_filename} already exists. Remove and rerun.")
 
     # First find all the columns and just select which columns we don't need
-    columns = read_fn(csv_file, nrows=1).columns
+    if read_fn == pd.read_csv:
+        columns = read_fn(csv_file, nrows=1).columns
+    else:
+        columns = read_fn(csv_file).columns
     columns = [str(c) for c in columns]
     columns = [c for c in columns if not c.startswith("exclude")]
     columns = [c for c in columns if not c.startswith("Unnamed:")]
     columns = [c for c in columns if c != "filename"]
-    df = read_fn(csv_file, usecols=columns)
+    if read_fn == pd.read_csv:
+        df = read_fn(csv_file, usecols=columns)
+    else:
+        df = read_fn(csv_file, columns=columns)
 
     if parquet_filename:
         df.to_parquet(parquet_filename)
@@ -104,8 +110,8 @@ def get_mean_std(df: pd.DataFrame) -> pd.Series:
 
 
 def create_report(input_csv_file: str, output_csv_file: str) -> Result:
-    read_fn = csv_read_fn(input_csv_file)
-    df = read_fn(input_csv_file)
+    # read_fn = csv_read_fn(input_csv_file)
+    df = read_csv(input_csv_file)
 
     # For every feaure set, run names start with 0 and end with 255. It
     # becomes easier to aggregate if run names were unique
