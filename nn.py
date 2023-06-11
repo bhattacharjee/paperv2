@@ -22,9 +22,22 @@ class NNModel:
         self.model = tf.keras.models.Sequential(
             [
                 tf.keras.layers.Dense(8, activation="relu", input_dim=input_dim),
-                tf.keras.layers.Dense(4, activation="relu"),
-                tf.keras.layers.Dense(2, activation="relu"),
-                tf.keras.layers.Dense(1, activation="sigmoid"),
+                tf.keras.layers.Dropout(rate=0.2),
+                tf.keras.layers.Dense(
+                    4,
+                    activation="relu",
+                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                ),
+                tf.keras.layers.Dense(
+                    2,
+                    activation="relu",
+                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                ),
+                tf.keras.layers.Dense(
+                    1,
+                    activation="sigmoid",
+                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                ),
             ]
         )
         self.model.compile(
