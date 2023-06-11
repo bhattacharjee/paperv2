@@ -6,9 +6,9 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (accuracy_score, auc, f1_score, recall_score,
-                             precision_recall_curve, precision_score,
-                             roc_auc_score, balanced_accuracy_score)
+from sklearn.metrics import (accuracy_score, auc, balanced_accuracy_score,
+                             f1_score, precision_recall_curve, precision_score,
+                             recall_score, roc_auc_score)
 
 
 @dataclass
@@ -61,6 +61,7 @@ metrics = [
     ),
 ]
 
+
 def csv_read_fn(csv_file: str) -> Any:
     read_fn = (
         pd.read_csv
@@ -68,6 +69,7 @@ def csv_read_fn(csv_file: str) -> Any:
         else pd.read_parquet
     )
     return read_fn
+
 
 def read_csv(csv_file: str) -> pd.DataFrame:
     parquet_filename = ""
@@ -81,7 +83,7 @@ def read_csv(csv_file: str) -> pd.DataFrame:
 
     if parquet_filename and os.path.exists(parquet_filename):
         raise Exception(f"Parquet {parquet_filename} already exists. Remove and rerun.")
-    
+
     # TODO: Needs some cleaning up.
     # 1. Find a better way to deal with read_parquet and read_csv
     # 2. In read_pandas, find a way to read only the first row
@@ -94,11 +96,17 @@ def read_csv(csv_file: str) -> pd.DataFrame:
     columns = [str(c) for c in columns]
     columns = [c for c in columns if not c.startswith("exclude")]
     columns = [c for c in columns if not c.startswith("Unnamed:")]
-    columns = [c for c in columns if c != "filename"]
     if read_fn == pd.read_csv:
         df = read_fn(csv_file, usecols=columns)
     else:
         df = read_fn(csv_file, columns=columns)
+
+    # Now convert file names to categorical strings. We really
+    # are not interested in the file names themselves, we only need
+    # them as unique markers for each fold.
+    filenames, _ = pd.factorize(df["filename"])
+    filenames = filenames.astype(str)
+    df["filename"] = filenames
 
     if parquet_filename:
         df.to_parquet(parquet_filename)
@@ -120,7 +128,13 @@ def create_report(input_csv_file: str, output_csv_file: str) -> Result:
     # For every feaure set, run names start with 0 and end with 255. It
     # becomes easier to aggregate if run names were unique
     # Make them unique by simply appending the run name and feature set name
-    df["run_name"] = df["feature_set"] + ":" + df["run_name"]
+    #
+    # Note: we calculate the metric for each fold separately, and then
+    # take the mean/std. If we don't want to do this, and just want to
+    # calculate the metric for each combination separately, remove the filename
+    # from the following concatenation.
+    df["run_name"] = df["feature_set"] + ":" + df["run_name"] + ":" + df["filename"]
+    df.drop(columns=["filename"], axis=1, inplace=True)
 
     def calculate_metrics(group):
         return pd.Series(
