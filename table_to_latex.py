@@ -120,7 +120,6 @@ def main():
     parser.add_argument(
         "-d",
         "--descending",
-        type=bool,
         default=False,
         action="store_true",
         help="Descending order?",
