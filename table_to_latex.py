@@ -1,6 +1,6 @@
 import argparse
-from typing import List, Final
 from dataclasses import dataclass
+from typing import Final, List
 
 import pandas as pd
 
@@ -73,8 +73,8 @@ def highlight_extremes(
 
         def transform_cell(x):
             lmax_marker, lmin_marker = max_marker, min_marker
-            
-            # for fnr, fpr, the highlighting is reversed (but not for standard 
+
+            # for fnr, fpr, the highlighting is reversed (but not for standard
             # deviation - which is where descending=True is specified)
             if not descending and column in ["fnr", "fpr", "FPR", "FNR"]:
                 lmin_marker, lmax_marker = lmax_marker, lmin_marker
@@ -109,8 +109,22 @@ def transform_run_names(df: pd.DataFrame) -> pd.DataFrame:
 
 def main():
     parser = argparse.ArgumentParser("Convert CSV to json")
-    parser.add_argument("-f", "--file", type=str, required=True)
-    parser.add_argument("-r", "--round-decimals", type=int, default=ROUND_DECIMALS)
+    parser.add_argument("-f", "--file", type=str, required=True, help="Input file")
+    parser.add_argument(
+        "-r",
+        "--round-decimals",
+        type=int,
+        default=ROUND_DECIMALS,
+        help="Number of decimal points.",
+    )
+    parser.add_argument(
+        "-d",
+        "--descending",
+        type=bool,
+        default=False,
+        action="store_true",
+        help="Descending order?",
+    )
     args = parser.parse_args()
     filename = args.file
 
@@ -128,8 +142,20 @@ def main():
 
     h_df = highlight_extremes(
         df,
-        columns=["precision", "recall", "roc_auc", "auc_pr", "accuracy", "f1", "fnr", "fpr", "tnr", "tpr"],
+        columns=[
+            "precision",
+            "recall",
+            "roc_auc",
+            "auc_pr",
+            "accuracy",
+            "f1",
+            "fnr",
+            "fpr",
+            "tnr",
+            "tpr",
+        ],
         round_decimals=args.round_decimals,
+        descending=args.descending,
     )
     h_df = h_df.rename(columns=rename_columns_map)
     latex_table = h_df.to_latex(index=False, escape=False)
