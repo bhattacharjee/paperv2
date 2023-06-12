@@ -36,9 +36,9 @@ stats = {
     "TNR": (lambda df: tnr(df["y_true"], df["y_pred"])),
     "FPR": (lambda df: fpr(df["y_true"], df["y_pred"])),
     "FNR": (lambda df: fnr(df["y_true"], df["y_pred"])),
-    "Precision": (lambda df: metrics.precision_score(df["y_true"], df["y_pred"])),
-    "Recall": (lambda df: metrics.recall_score(df["y_true"], df["y_pred"])),
-    "F1-Score": (lambda df: metrics.f1_score(df["y_true"], df["y_pred"])),
+    "Precision": (lambda df: metrics.precision_score(df["y_true"], df["y_pred"], zero_division=1)),
+    "Recall": (lambda df: metrics.recall_score(df["y_true"], df["y_pred"], zero_division=1)),
+    "F1-Score": (lambda df: metrics.f1_score(df["y_true"], df["y_pred"], zero_division=1)),
     "AUROC": (lambda df: metrics.roc_auc_score(df["y_true"], df["y_pred_proba"])),
 }
 

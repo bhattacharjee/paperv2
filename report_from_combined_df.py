@@ -6,9 +6,16 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (accuracy_score, auc, balanced_accuracy_score,
-                             f1_score, precision_recall_curve, precision_score,
-                             recall_score, roc_auc_score)
+from sklearn.metrics import (
+    accuracy_score,
+    auc,
+    balanced_accuracy_score,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 
 
 @dataclass
@@ -33,11 +40,15 @@ def auc_pr(y_true: pd.Series, y_pred_proba: pd.Series) -> np.float64:
 metrics = [
     Metric(
         name="precision",
-        fn=lambda y_true, y_pred, y_pred_proba: precision_score(y_true, y_pred),
+        fn=lambda y_true, y_pred, y_pred_proba: precision_score(
+            y_true, y_pred, zero_division=1
+        ),
     ),
     Metric(
         name="recall",
-        fn=lambda y_true, y_pred, y_pred_proba: recall_score(y_true, y_pred),
+        fn=lambda y_true, y_pred, y_pred_proba: recall_score(
+            y_true, y_pred, zero_division=1
+        ),
     ),
     Metric(
         name="accuracy",
@@ -49,7 +60,9 @@ metrics = [
     ),
     Metric(
         name="f1",
-        fn=lambda y_true, y_pred, y_pred_proba: f1_score(y_true, y_pred),
+        fn=lambda y_true, y_pred, y_pred_proba: f1_score(
+            y_true, y_pred, zero_division=1
+        ),
     ),
     Metric(
         name="roc_auc",
