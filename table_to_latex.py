@@ -23,9 +23,10 @@ feature_name_map = {
     "advanced-and-fourier-min": Feature("Advanced and Fourier (min)", 7),
     "advanced-and-fourier": Feature("Advanced and Fourier", 8),
     "baseline-advanced-and-fourier-min": Feature("Baseline, advanced and Fourier (min)", 9),
-    "baseline-advanced-and-fourier": Feature("Baseline, advanced and Fourier", 9),
+    "baseline-advanced-and-fourier": Feature("Baseline, advanced and Fourier", 10),
 }
 
+# The order of columns used is the order in this map
 rename_columns_map = {
     "run_name": "Feature Set",
     "accuracy": "Accuracy",
