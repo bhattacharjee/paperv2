@@ -6,16 +6,10 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (
-    accuracy_score,
-    auc,
-    balanced_accuracy_score,
-    f1_score,
-    precision_recall_curve,
-    precision_score,
-    recall_score,
-    roc_auc_score,
-)
+from sklearn.metrics import (accuracy_score, auc, balanced_accuracy_score,
+                             confusion_matrix, f1_score,
+                             precision_recall_curve, precision_score,
+                             recall_score, roc_auc_score)
 
 
 @dataclass
@@ -30,6 +24,26 @@ class Result:
     mean_df: pd.DataFrame
     std_df: pd.DataFrame
     agg_df: pd.DataFrame
+
+
+def get_confusion_matrix_unraveled(
+    y_true: pd.Series, y_pred: pd.Series, which_rate: str
+):
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+    tpr = tp / (tp + fn)
+    tnr = tn / (tn + fp)
+    fpr = fp / (tn + fp)
+    fnr = fn / (tp + fn)
+
+    columns = ["tnr", "fpr", "fnr", "tpr"]
+    output = [tnr, fpr, fnr, tpr]
+    return output[columns.index(which_rate)]
+
+
+fpr = partial(get_confusion_matrix_unraveled, which_rate="fpr")
+fnr = partial(get_confusion_matrix_unraveled, which_rate="fnr")
+tpr = partial(get_confusion_matrix_unraveled, which_rate="tpr")
+tnr = partial(get_confusion_matrix_unraveled, which_rate="tnr")
 
 
 def auc_pr(y_true: pd.Series, y_pred_proba: pd.Series) -> np.float64:
@@ -72,6 +86,10 @@ metrics = [
         name="auc_pr",
         fn=lambda y_true, y_pred, y_pred_proba: auc_pr(y_true, y_pred_proba),
     ),
+    Metric(name="tpr", fn=lambda y_true, y_pred, y_pred_proba: tpr(y_true, y_pred)),
+    Metric(name="tnr", fn=lambda y_true, y_pred, y_pred_proba: tnr(y_true, y_pred)),
+    Metric(name="fpr", fn=lambda y_true, y_pred, y_pred_proba: fpr(y_true, y_pred)),
+    Metric(name="fnr", fn=lambda y_true, y_pred, y_pred_proba: fnr(y_true, y_pred)),
 ]
 
 
