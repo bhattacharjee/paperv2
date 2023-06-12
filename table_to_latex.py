@@ -1,10 +1,30 @@
 import argparse
 from typing import List, Final
+from dataclasses import dataclass
 
 import pandas as pd
 
 ROUND_DECIMALS: Final = 3
 
+
+@dataclass
+class Feature:
+    name: str
+    order: int
+    
+feature_name_map = {
+    "baseline-only": Feature("Baseline only", 0),
+    "advanced-only": Feature("Advanced only", 1),
+    "fourier-min-only": Feature("Fourier (min) only", 2),
+    "fourier-only": Feature("Fourier only", 3),
+    "baseline-and-advanced": Feature("Baseline and advanced", 4),
+    "baseline-and-fourier-min": Feature("Baseline and Fourier (min)", 5),
+    "baseline-and-fourier": Feature("Baseline and Fourier", 6),
+    "advanced-and-fourier-min": Feature("Advanced and Fourier (min)", 7),
+    "advanced-and-fourier": Feature("Advanced and Fourier", 8),
+    "baseline-advanced-and-fourier-min": Feature("Baseline, advanced and Fourier (min)", 9),
+    "baseline-advanced-and-fourier": Feature("Baseline, advanced and Fourier", 9),
+}
 
 rename_columns_map = {
     "run_name": "Feature Set",
@@ -59,6 +79,16 @@ def highlight_extremes(
     print(f"{columns_to_drop=}")
     return df
 
+def transform_run_names(df: pd.DataFrame) -> pd.DataFrame:
+    """Transform the run names"""
+    df = df.copy()
+    order_map = {name: v.order for name, v in feature_name_map.items()}
+    name_map = {name: v.name for name, v in feature_name_map.items()}
+    df['sort_order'] = df['run_name'].map(lambda x: order_map[x])
+    df['run_name'] = df['run_name'].map(lambda x: name_map[x])
+    df = df.sort_values(by='sort_order')
+    df.drop(columns=['sort_order'])
+    return df
 
 def main():
     parser = argparse.ArgumentParser("Convert CSV to json")
@@ -76,6 +106,8 @@ def main():
         df = pd.read_parquet(filename)
     else:
         df = pd.read_csv(filename)
+        
+    df = transform_run_names(df)
 
     h_df = highlight_extremes(
         df,
