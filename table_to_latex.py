@@ -6,6 +6,18 @@ import pandas as pd
 
 ROUND_DECIMALS: Final = 3
 
+head_text = """\\begin{table*}[t]
+    \centering"""
+
+tail_text_mean = """    \\caption{Mean accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}
+    \label{tab:e1-neural-network-mean}
+\end{table*}"""
+
+tail_text_std = """    \\caption{Standard deviation of accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}
+    \label{tab:e1-neural-network-mean}
+\end{table*}"""
+
+
 
 @dataclass
 class Feature:
@@ -17,6 +29,7 @@ feature_name_map = {
     "baseline-only": Feature("Baseline only", 0),
     "advanced-only": Feature("Advanced only", 1),
     "fourier-min-only": Feature("Fourier (min) only", 2),
+    "fourier-min": Feature("Fourier (min) only", 2),
     "fourier-only": Feature("Fourier only", 3),
     "baseline-and-advanced": Feature("Baseline and advanced", 4),
     "baseline-and-fourier-min": Feature("Baseline and Fourier (min)", 5),
@@ -91,7 +104,6 @@ def highlight_extremes(
     columns_to_drop = list(set(df.columns) - set(columns))
     columns_to_drop = [c for c in columns_to_drop if "name" not in c.lower()]
     df.drop(columns=columns_to_drop, inplace=True)
-    print(f"{columns_to_drop=}")
     return df
 
 
@@ -159,7 +171,8 @@ def main():
     h_df = h_df.rename(columns=rename_columns_map)
     latex_table = h_df.to_latex(index=False, escape=False)
 
-    print(latex_table)
+    tail_text = tail_text_std if args.descending else tail_text_mean
+    print(f"{head_text}\n{latex_table}\n{tail_text}\n")
 
 
 if __name__ == "__main__":
