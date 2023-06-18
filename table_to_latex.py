@@ -6,16 +6,24 @@ import pandas as pd
 
 ROUND_DECIMALS: Final = 3
 
-head_text = """\\begin{table*}[t]
-    \centering"""
+head_text = """
+\\add{
+\\protect \\begin{table*}[t]
+    \centering
+\\add{\\protect """
 
-tail_text_mean = """    \\caption{Mean accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}
+tail_text_mean = """}
+    \\add{\\protect \\caption{Mean accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}}
     \label{tab:e1-neural-network-mean}
-\end{table*}"""
+\end{table*}
+}"""
 
-tail_text_std = """    \\caption{Standard deviation of accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}
+tail_text_std = """}
+\\add{\\protect \\caption{Standard deviation of accuracy, precision, recall, F1-score, ROC\\_AUC, PRC\\_AUC, TPR, FPR, TNR, FNR for a densely connected neural network.}}
     \label{tab:e1-neural-network-mean}
-\end{table*}"""
+\end{table*}
+}
+}"""
 
 
 
