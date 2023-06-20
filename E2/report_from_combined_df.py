@@ -1,23 +1,29 @@
 import argparse
 import os
+import re
 from dataclasses import dataclass
 from functools import partial
-from typing import Any
-import re
+from typing import Any, List, Optional, Union
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (accuracy_score, auc, balanced_accuracy_score,
-                             confusion_matrix, f1_score,
-                             precision_recall_curve, precision_score,
-                             recall_score, roc_auc_score)
+from sklearn.metrics import (
+    accuracy_score,
+    auc,
+    balanced_accuracy_score,
+    confusion_matrix,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 
 
 @dataclass
 class Metric:
     name: str
     fn: Any
-
 
 
 def get_confusion_matrix_unraveled(
@@ -95,14 +101,16 @@ def csv_read_fn(csv_file: str) -> Any:
     )
     return read_fn
 
+
 def is_interesting_file(x):
     """We don't want files that are the PDF descriptions
     of each folder"""
-    pattern = r'.*\d{4}\-.*'
+    pattern = r".*\d{4}\-.*"
     m = re.match(pattern, x)
     if m:
         return True
     return False
+
 
 def read_csv(csv_file: str) -> pd.DataFrame:
     parquet_filename = ""
@@ -144,12 +152,38 @@ def get_mean_std(df: pd.DataFrame) -> pd.Series:
         df.groupby("run_name").mean(),
         df.groupby("run_name").std(),
     )
-    
 
-def create_report_for_df(df: pd.DataFrame):
+
+def create_report_for_df(
+    df: pd.DataFrame,
+    matches: Optional[Union[List[str], str]] = None,
+    negative_matches: Optional[Union[List[str], str]] = None,
+):
     df = df.copy()
+
+    def is_row_match(x):
+        if not negative_matches and not matches:
+            return True
+        if negative_matches:
+            if isinstance(negative_matches, list):
+                for x1 in negative_matches:
+                    if x1.lower() in x:
+                        return False
+            else:
+                if negative_matches.lower() in x.lower():
+                    return False
+        if matches:
+            if isinstance(matches, list):
+                for x1 in matches:
+                    if x1.lower() in x.lower():
+                        return True
+            else:
+                if matches.lower() in x.lower():
+                    return True
+        return False
+
+    df = df[df["filename"].map(is_row_match)]
     df.drop(columns=["filename"], axis=1, inplace=True)
-    
 
     def calculate_metrics(group):
         return pd.Series(
@@ -158,7 +192,6 @@ def create_report_for_df(df: pd.DataFrame):
                 for m in metrics
             }
         )
-        
 
     metrics_df = df.groupby("feature_set").apply(calculate_metrics)
     metrics_df.reset_index(inplace=True)
@@ -166,39 +199,37 @@ def create_report_for_df(df: pd.DataFrame):
     return metrics_df
 
 
-
 def create_report(input_csv_file: str, output_csv_file: str):
     # read_fn = csv_read_fn(input_csv_file)
     df = read_csv(input_csv_file)
-    
-    def is_password_protected(filename):
-        return "password" in filename.lower()
-    
-    def is_archive(filename):
-        for ext in [".tar.gz", ".gzip", ".zip", ".tar", ".7z"]:
-            if filename.lower().endswith(ext):
-                return True
-        return False
-    
-    def is_office_file(filename):
-        for ext in [".ppt", ".pptx", ".xls", ".xlsx", ".doc", ".docx", ".odp", ".odt", ".ods"]:
-            if filename.lower().endswith(ext):
-                return True
-        return False
-    
-    password_result = create_report_for_df(df[df["filename"].map(is_password_protected)])
+
+    # def is_password_protected(filename):
+    #     return "password" in filename.lower()
+
+    # def is_archive(filename):
+    #     for ext in [".tar.gz", ".gzip", ".zip", ".tar", ".7z"]:
+    #         if filename.lower().endswith(ext):
+    #             return True
+    #     return False
+
+    # def is_office_file(filename):
+    #     for ext in [".ppt", ".pptx", ".xls", ".xlsx", ".doc", ".docx", ".odp", ".odt", ".ods"]:
+    #         if filename.lower().endswith(ext):
+    #             return True
+    #     return False
+
+    password_result = create_report_for_df(df, ["password"], [".7z", ".gz", ".zip"])
     all_files_result = create_report_for_df(df)
-    archive_result = create_report_for_df(df[df["filename"].map(is_archive)])
-    office_result = create_report_for_df(df[df["filename"].map(is_office_file)])
-    
+    office_result = create_report_for_df(
+        df, [".xls", ".csv", ".ppt", ".doc", ".doc", "odf", "opf"]
+    )
+
     print("*************** ALL FILES ****************")
-    print(all_files_result.sort_values(by='auc_pr'))
+    print(all_files_result.sort_values(by="auc_pr"))
     print("*************** PASSWORD PROTECTED FILES ****************")
-    print(password_result.sort_values(by='auc_pr'))
-    print("*************** ARCHIVE FILES ****************")
-    print(archive_result.sort_values(by='auc_pr'))
+    print(password_result.sort_values(by="auc_pr"))
     print("*************** OFFICE FILES ****************")
-    print(office_result.sort_values(by='auc_pr'))
+    print(office_result.sort_values(by="auc_pr"))
 
 
 def main() -> None:
@@ -218,7 +249,6 @@ def main() -> None:
         else "result_output.csv"
     )
     create_report(args.input_file, args.output_file)
-
 
 
 if "__main__" == __name__:
