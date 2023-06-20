@@ -19,19 +19,14 @@ import pandas as pd
 import tqdm
 from loguru import logger
 from sklearn import pipeline
+from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis as QDA
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (
-    accuracy_score,
-    balanced_accuracy_score,
-    f1_score,
-    precision_score,
-    recall_score,
-    roc_auc_score,
-)
+from sklearn.metrics import (accuracy_score, balanced_accuracy_score, f1_score,
+                             precision_score, recall_score, roc_auc_score)
 from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis as QDA
+
 from nn import *
 
 # import dotenv
@@ -219,7 +214,7 @@ def load_data(input_directory: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
         pd.DataFrame: A combined dataframe of all files (Train)
         pd.DataFrame: A combined dataframe of all files (Test)
     """
-    
+
     interesting_files = [
         "plaintext.base32.combined.csv.gz",
         "expanded.base32.des3.csv.gz",
@@ -248,11 +243,13 @@ def load_data(input_directory: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     logger.info("Loading dataframes")
     dataframes = {
         # f: pd.read_csv(f, skiprows=lambda i: i > 0 and random.random() > p)
-        f: pd.read_csv(f) #, nrows=50)
-        for f in tqdm.tqdm(glob.glob(f"{input_directory}{os.path.sep}*.csv.gz"), desc="Loading data")
+        f: pd.read_csv(f)  # , nrows=50)
+        for f in tqdm.tqdm(
+            glob.glob(f"{input_directory}{os.path.sep}*.csv.gz"), desc="Loading data"
+        )
         if os.path.basename(f).lower() in interesting_files
     }
-    
+
     logger.info("Annotating dataframes with additional fields")
     dataframes = {
         f: annotate_df_with_additional_fields(f, df) for f, df in dataframes.items()
@@ -267,7 +264,9 @@ def load_data(input_directory: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
 
     logger.info("Combining train dataframes into a single dataframe")
     train_df = (
-        pd.concat([df for fname, df in dataframes.items() if "n1." not in fname.lower()])
+        pd.concat(
+            [df for fname, df in dataframes.items() if "n1." not in fname.lower()]
+        )
         .sample(frac=1)
         .reset_index(drop=True)
     )
@@ -333,16 +332,15 @@ def evaluate(
     X_test = test_df[colnames].to_numpy()
     y_test = test_df["is_encrypted"].to_numpy().flatten()
 
-    #train_filenames = train_df["extended.base_filename"].flatten()
+    # train_filenames = train_df["extended.base_filename"].flatten()
     test_filenames = test_df["extended.base_filename"].to_numpy().flatten()
-    
 
     # pline, y_pred_fn = get_pipeline(X, n_jobs=n_jobs)
     pline = NNModel(input_dim=X_train.shape[-1])
     pline.fit(X_train, y_train)
     y_pred = pline.predict(X_test).flatten()
     y_predict_proba = pline.predict_proba(X_test).flatten()
-    
+
     save_filename = output_directory + os.path.sep + name + ".csv.gz"
     df2 = pd.DataFrame(
         {
@@ -414,7 +412,7 @@ def main() -> None:
             colour="blue",
         )
     ):
-        temp_output_dir = f"{args.output_directory}" # + os.path.sep + f"{fsname}"
+        temp_output_dir = f"{args.output_directory}"  # + os.path.sep + f"{fsname}"
 
         print_text = f"******** Processing {fsname} and writing into {temp_output_dir}"
         logger.opt(colors=True).info(f"<green>{print_text}</>")
@@ -451,12 +449,12 @@ def main() -> None:
 
         t2 = time.perf_counter()
         logger.info(f"{n:02d}. Completed running feature {fsname} in {t2 - t1} seconds")
-        
+
         df["feature_set"] = fsname
         dataframes_list.append(df)
     print("Finished... OK")
     logger.opt(colors=True).info(f"<green>Finished... OK</>")
-    
+
     df = pd.concat(dataframes_list)
     df.to_csv(f"{args.output_directory}{os.path.sep}combined.csv.gz")
 
