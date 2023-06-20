@@ -248,7 +248,7 @@ def load_data(input_directory: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     logger.info("Loading dataframes")
     dataframes = {
         # f: pd.read_csv(f, skiprows=lambda i: i > 0 and random.random() > p)
-        f: pd.read_csv(f, nrows=50)
+        f: pd.read_csv(f) #, nrows=50)
         for f in tqdm.tqdm(glob.glob(f"{input_directory}{os.path.sep}*.csv.gz"), desc="Loading data")
         if os.path.basename(f).lower() in interesting_files
     }
@@ -327,10 +327,15 @@ def evaluate(
     colnames = [c for c in feature_column_names if "is_encrypted" not in c]
     colnames = [c for c in colnames if c not in annotation_columns]
     colnames = [c for c in colnames if not c.startswith("an_")]
+    colnames = [c for c in colnames if not c.lower() == "extended.base_filename"]
     X_train = train_df[colnames].to_numpy()
     y_train = train_df["is_encrypted"].to_numpy().flatten()
     X_test = test_df[colnames].to_numpy()
     y_test = test_df["is_encrypted"].to_numpy().flatten()
+
+    #train_filenames = train_df["extended.base_filename"].flatten()
+    test_filenames = test_df["extended.base_filename"].to_numpy().flatten()
+    
 
     # pline, y_pred_fn = get_pipeline(X, n_jobs=n_jobs)
     pline = NNModel(input_dim=X_train.shape[-1])
@@ -341,14 +346,15 @@ def evaluate(
     save_filename = output_directory + os.path.sep + name + ".csv.gz"
     df2 = pd.DataFrame(
         {
+            "filename": test_filenames,
             "y_true": y_test,
             "y_pred": y_pred,
             "y_pred_proba": y_predict_proba,
         }
     )
     logger.info(f"Saving to {save_filename}")
-    print(f"Saving to {save_filename}")
     df2.to_csv(save_filename)
+    return df2
 
 
 def main() -> None:
@@ -400,6 +406,7 @@ def main() -> None:
 
     annot_columns = get_annotation_columns(master_train_df)
 
+    dataframes_list = []
     for n, (fsname, fscolumns) in enumerate(
         tqdm.tqdm(
             get_columns_and_types(master_train_df).items(),
@@ -415,7 +422,7 @@ def main() -> None:
 
         columns = copy.copy(fscolumns)
         columns += annot_columns
-        columns += ["is_encrypted"]
+        columns += ["is_encrypted", "extended.base_filename"]
 
         if not os.path.exists(temp_output_dir):
             os.mkdir(temp_output_dir)
@@ -431,7 +438,7 @@ def main() -> None:
 
         # print(fscolumns)
         print("Evaluating")
-        evaluate(
+        df = evaluate(
             name=fsname,
             train_df=master_train_df[columns].copy(),
             test_df=master_test_df[columns].copy(),
@@ -444,8 +451,14 @@ def main() -> None:
 
         t2 = time.perf_counter()
         logger.info(f"{n:02d}. Completed running feature {fsname} in {t2 - t1} seconds")
+        
+        df["feature_set"] = fsname
+        dataframes_list.append(df)
     print("Finished... OK")
     logger.opt(colors=True).info(f"<green>Finished... OK</>")
+    
+    df = pd.concat(dataframes_list)
+    df.to_csv(f"{args.output_directory}{os.path.sep}combined.csv.gz")
 
 
 if "__main__" == __name__:
