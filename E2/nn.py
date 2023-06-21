@@ -21,22 +21,32 @@ class NNModel:
         self.scalar = MinMaxScaler()
         self.model = tf.keras.models.Sequential(
             [
-                tf.keras.layers.Dense(8, activation="relu", input_dim=input_dim),
-                tf.keras.layers.Dropout(rate=0.2),
+                tf.keras.layers.Dense(64, input_dim=input_dim),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
+                tf.keras.layers.Dense(
+                    32,
+                ),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
+                tf.keras.layers.Dense(
+                    16,
+                ),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
+                tf.keras.layers.Dense(
+                    8,
+                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
+                ),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
                 tf.keras.layers.Dense(
                     4,
-                    activation="relu",
-                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
                 ),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
                 tf.keras.layers.Dense(
                     2,
-                    activation="relu",
-                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
                 ),
+                tf.keras.layers.LeakyReLU(alpha=0.1),
                 tf.keras.layers.Dense(
                     1,
                     activation="sigmoid",
-                    kernel_regularizer=tf.keras.regularizers.l2(0.01),
                 ),
             ]
         )
@@ -55,12 +65,11 @@ class NNModel:
         self.model.fit(
             x=X,
             y=y,
-            verbose="silent",
             validation_split=0.1,
             shuffle=True,
-            batch_size=128,
-            epochs=5,
-            callbacks=[tf.keras.callbacks.EarlyStopping(monitor="loss", patience=2)],
+            batch_size=32,
+            epochs=50,
+            callbacks=[tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)],
         )
 
     def predict_proba(self, X):

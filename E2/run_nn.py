@@ -327,6 +327,7 @@ def evaluate(
     colnames = [c for c in colnames if c not in annotation_columns]
     colnames = [c for c in colnames if not c.startswith("an_")]
     colnames = [c for c in colnames if not c.lower() == "extended.base_filename"]
+    train_df = train_df.sample(frac=1, random_state=42).reset_index(drop=True)
     X_train = train_df[colnames].to_numpy()
     y_train = train_df["is_encrypted"].to_numpy().flatten()
     X_test = test_df[colnames].to_numpy()
