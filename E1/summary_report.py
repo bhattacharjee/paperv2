@@ -54,7 +54,7 @@ def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
             or ("linear" in b_fname.lower() and "regression" in b_fname.lower())
         ):
             out_list.append(
-                MetricsAndModels(filename=fname, modelname="Lotistic Regression")
+                MetricsAndModels(filename=fname, modelname="Logistic Regression")
             )
         elif (
             "neural" in b_fname.lower()
@@ -126,6 +126,10 @@ def create_summary(mam: List[MetricsAndModels], metric: Metric) -> pd.DataFrame:
     df = pd.DataFrame()
     for e in mam:
         df[e.modelname] = get_chosen_series(e.dataframe, metric)
+
+    # Sort the columns so that we have the same order
+    columns = sorted([str(c) for c in df.columns])
+    df = df[columns]
     return df
 
 
