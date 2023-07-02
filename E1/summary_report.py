@@ -28,6 +28,7 @@ def glob_filenames(dirname: str) -> List[str]:
         out_filenames = out_filenames + glob.glob(f"{dirname}/{extra_pattern}{exten}")
     return out_filenames
 
+
 def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
     out_list: List[MetricsAndModels] = []
     for fname in glob_filenames(dir_name):
@@ -62,7 +63,9 @@ def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
             or ".nn." in b_fname.lower()
             or "_nn_" in b_fname.lower()
         ):
-            out_list.append(MetricsAndModels(filename=fname, modelname="Neural Network"))
+            out_list.append(
+                MetricsAndModels(filename=fname, modelname="Neural Network")
+            )
         elif (
             "qda" in b_fname.lower()
             or "quadratic" in b_fname.lower()
@@ -83,7 +86,9 @@ def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
     for element in out_list:
         if ".csv" in element.filename.lower():
             element.dataframe = pd.read_csv(element.filename)
-        elif ".pq" in element.filename.lower() or ".parquet" in element.filename.lower():
+        elif (
+            ".pq" in element.filename.lower() or ".parquet" in element.filename.lower()
+        ):
             element.dataframe = pd.read_parquet(element.filename)
         else:
             logger.error(f"{element.filename=} has incorrect extension")
@@ -94,7 +99,7 @@ def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
 
 def get_chosen_series(df: pd.DataFrame, metric: Metric) -> pd.Series:
     columns = [str(c) for c in df.columns]
-    
+
     def rename_run_name(n: str) -> str:
         if n == "fourier-min":
             return "fourier-min-only"
@@ -113,12 +118,12 @@ def get_chosen_series(df: pd.DataFrame, metric: Metric) -> pd.Series:
                 break
     else:
         raise Exception(f"Invalid {metric=}")
-    
+
     if not chosen_column:
         raise Exception(f"Could not find column for {metric=}")
-    
-    df['run_name'] = df['run_name'].map(rename_run_name)
-    df = df.set_index('run_name')
+
+    df["run_name"] = df["run_name"].map(rename_run_name)
+    df = df.set_index("run_name")
     return df[chosen_column]
 
 
@@ -166,9 +171,16 @@ def main():
     summary = create_summary(metrics_and_models, metric)
     print(summary)
     if args.output_file:
-        if args.output_file.lower().endswith("csv") or args.output_file.lower().endswith(".csv.gz"):
+        if args.output_file.lower().endswith(
+            "csv"
+        ) or args.output_file.lower().endswith(".csv.gz"):
             summary.to_csv(args.output_file)
-        elif args.output_file.lower().endswith("pq") or args.output_file.lower().endswith(".pq.gz") or args.output_file.lower().endswith(".parquet") or args.output_file.lower().endswith(".parquet.gz"):
+        elif (
+            args.output_file.lower().endswith("pq")
+            or args.output_file.lower().endswith(".pq.gz")
+            or args.output_file.lower().endswith(".parquet")
+            or args.output_file.lower().endswith(".parquet.gz")
+        ):
             summary.to_parquet(args.output_file)
         else:
             raise Exception(f"{args.output_file=} must be a parquet or csv")
