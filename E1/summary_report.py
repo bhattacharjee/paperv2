@@ -21,17 +21,17 @@ class MetricsAndModels:
     dataframe: Optional[pd.DataFrame] = None
 
 
-def glob_filenames(dirname: str) -> List[str]:
+def glob_filenames(dirname: str, use_stddev: bool = False) -> List[str]:
     out_filenames: List[str] = []
-    extra_pattern = "mean*"
+    extra_pattern = "std*" if use_stddev else "mean*"
     for exten in ("*.csv", "*.csv.gz", "*.pq", "*.pq.gz", "*.parquet", "*.parquet.gz"):
         out_filenames = out_filenames + glob.glob(f"{dirname}/{extra_pattern}{exten}")
     return out_filenames
 
 
-def get_dataframes(dir_name: str) -> List[MetricsAndModels]:
+def get_dataframes(dir_name: str, use_stddev: bool = False) -> List[MetricsAndModels]:
     out_list: List[MetricsAndModels] = []
-    for fname in glob_filenames(dir_name):
+    for fname in glob_filenames(dir_name, use_stddev):
         b_fname = os.path.basename(fname)
         if (
             "knn" in b_fname.lower()
@@ -158,6 +158,9 @@ def main():
     parser.add_argument(
         "-o", "--output-file", type=str, required=False, help="Output file to write to"
     )
+    parser.add_argument(
+        "-s", "--stddev", action="store_true", help="Use the standard deviation instead of mean"
+    )
     args = parser.parse_args()
 
     if args.metric in ("auc_roc", "roc_auc", "auroc"):
@@ -167,7 +170,7 @@ def main():
     else:
         raise Exception(f"Unexpected metric value {metric}")
 
-    metrics_and_models = get_dataframes(args.directory)
+    metrics_and_models = get_dataframes(args.directory, args.stddev)
     summary = create_summary(metrics_and_models, metric)
     print(summary)
     if args.output_file:
