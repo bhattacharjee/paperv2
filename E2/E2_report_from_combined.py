@@ -7,10 +7,17 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import (accuracy_score, auc, balanced_accuracy_score,
-                             confusion_matrix, f1_score,
-                             precision_recall_curve, precision_score,
-                             recall_score, roc_auc_score)
+from sklearn.metrics import (
+    accuracy_score,
+    auc,
+    balanced_accuracy_score,
+    confusion_matrix,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
 
 
 @dataclass
@@ -265,10 +272,16 @@ def print_latex(
 def save_df(df: pd.DataFrame, filename: str):
     if filename.lower().endswith(".csv") or filename.lower().endswith(".csv.gz"):
         pd.to_csv(filename)
-    elif filename.lower().endswith(".pq") or filename.lower().endswith(".pq.gz") or filename.lower().endswith(".parquet") or filename.lower().endswith(".parquet.gz"):
+    elif (
+        filename.lower().endswith(".pq")
+        or filename.lower().endswith(".pq.gz")
+        or filename.lower().endswith(".parquet")
+        or filename.lower().endswith(".parquet.gz")
+    ):
         pd.to_parquet(filename)
     else:
         raise Exception(f"Invalid {filename=}")
+
 
 def main():
     parser = argparse.ArgumentParser()
