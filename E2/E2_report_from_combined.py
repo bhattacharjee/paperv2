@@ -1,9 +1,9 @@
 import argparse
 import os
+import re
 from dataclasses import dataclass
 from functools import partial
 from typing import Any
-import re
 
 import numpy as np
 import pandas as pd
@@ -125,8 +125,9 @@ def get_combined_stats(df: pd.DataFrame) -> pd.DataFrame:
             {
                 m.name: m.fn(group["y_true"], group["y_pred"], group["y_pred_proba"])
                 for m in metrics
-            })
-        
+            }
+        )
+
     df = df.groupby("feature_set").apply(calculate_metrics).reset_index()
     df["order"] = df["feature_set"].map(get_order_number)
     df = df.sort_values(by="order", ignore_index=True)
@@ -138,12 +139,13 @@ def remove_base32_from_filename(fname: str) -> str:
     if fname.lower().startswith("base32.") or fname.lower().startswith("base64."):
         return fname[7:]
     return fname
-    
+
 
 def is_file_interesting(fname: str) -> bool:
     # There are some pdf files in each folder for description. those
     # must be removed. Non pdf files start with four digits
-    return True if re.match(r'^\d{4}', fname) else False
+    return True if re.match(r"^\d{4}", fname) else False
+
 
 def get_metrics_comparisons(df: pd.DataFrame) -> pd.DataFrame:
     return get_combined_stats(df)
@@ -151,6 +153,7 @@ def get_metrics_comparisons(df: pd.DataFrame) -> pd.DataFrame:
 
 def is_password_protected_file(fname: str) -> bool:
     return "password" in fname.lower()
+
 
 def is_office_file(fname: str) -> bool:
     extensions = [
@@ -259,45 +262,74 @@ def print_latex(
     print()
 
 
+def save_df(df: pd.DataFrame, filename: str):
+    if filename.lower().endswith(".csv") or filename.lower().endswith(".csv.gz"):
+        pd.to_csv(filename)
+    elif filename.lower().endswith(".pq") or filename.lower().endswith(".pq.gz") or filename.lower().endswith(".parquet") or filename.lower().endswith(".parquet.gz"):
+        pd.to_parquet(filename)
+    else:
+        raise Exception(f"Invalid {filename=}")
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--input-file", type=str, required=True)
+    parser.add_argument("-o", "--output-file", type=str, default="")
+    parser.add_argument(
+        "-off", "--office", action="store_true", help="Save stats for office files"
+    )
+    parser.add_argument(
+        "-a", "--all", action="store_true", help="Save stats for all files"
+    )
+    parser.add_argument(
+        "-pwd",
+        "--password-protected",
+        action="store_true",
+        help="Save stats for password protected files",
+    )
     args = parser.parse_args()
 
+    if not sum((args.office, args.password_protected, args.all)):
+        raise Exception(
+            "One and only one of --office/-off, --all/-a, --password-protected/-pwd must be specified"
+        )
+
     df = pd.read_csv(args.input_file)
-    
-    # Remove the base32 from filename
-    df['filename'] = df['filename'].map(remove_base32_from_filename)
-    
-    df = df[df['filename'].map(is_file_interesting)]
-    # tdf = tdf[tdf['filename'] == 'quality-50-percent.pdf']
-    # tdf = tdf[tdf['feature_set'] == 'baseline-only']
-    # print(tdf)
 
-    all_files: pd.DataFrame = get_metrics_comparisons(df.copy())
+    # Remove the base32 from filename, this simplifies logic
+    # that depends on filenames
+    df["filename"] = df["filename"].map(remove_base32_from_filename)
 
-    print("ALL FILES")
-    print("-" * len("ALL FILES"))
-    print(all_files.round(3).reset_index(drop=True))
-    # if args.to_latex:
-    #     print_latex(
-    #         all_files.reset_index(drop=True),
-    #         args.highlight_min_max,
-    #         args.num_decimals,
-    #     )
-    
-    pwd_files: pd.DataFrame = get_metrics_comparisons(df[df['filename'].map(is_password_protected_file)])
-    print()
-    print("PASSWORD PROTECTED FILES")
-    print("-" * len("PASSWORD PROTECTED FILES"))
-    print(pwd_files.round(3).reset_index(drop=True))
+    df = df[df["filename"].map(is_file_interesting)]
 
-    office_files: pd.DataFrame = get_metrics_comparisons(df[df['filename'].map(is_office_file)])
-    print()
-    print("OFFICE FILES")
-    print("-" * len("OFFICE FILES"))
-    print(office_files.round(3).reset_index(drop=True))
+    if args.all:
+        all_files: pd.DataFrame = get_metrics_comparisons(df.copy())
+        print("ALL FILES")
+        print("-" * len("ALL FILES"))
+        print(all_files.round(3).reset_index(drop=True))
+        if args.output_file:
+            save_df(all_files, args.output_file)
 
+    if args.password_protected:
+        pwd_files: pd.DataFrame = get_metrics_comparisons(
+            df[df["filename"].map(is_password_protected_file)]
+        )
+        print()
+        print("PASSWORD PROTECTED FILES")
+        print("-" * len("PASSWORD PROTECTED FILES"))
+        print(pwd_files.round(3).reset_index(drop=True))
+        if args.output_file:
+            save_df(pwd_files, args.output_file)
+
+    if args.office:
+        office_files: pd.DataFrame = get_metrics_comparisons(
+            df[df["filename"].map(is_office_file)]
+        )
+        print()
+        print("OFFICE FILES")
+        print("-" * len("OFFICE FILES"))
+        print(office_files.round(3).reset_index(drop=True))
+        if args.output_file:
+            save_df(office_files, args.output_file)
 
 
 if "__main__" == __name__:
