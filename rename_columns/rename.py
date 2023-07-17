@@ -101,16 +101,17 @@ def rename_column(oldname: str) -> str:
     else:
         print("Unknown column", oldname)
 
-df = pd.read_csv("s9.n1.ransomware.SODINOKIBI.csv.gz")
+if __name__ == "__main__":
+    df = pd.read_csv("s9.n1.ransomware.SODINOKIBI.csv.gz")
 
-newcols = [c for c in df.columns if not should_discard(c)]
-newcols = [rename_column(s) for s in newcols if rename_column(s) is not None]
-newcols = list(set(newcols))
-values = [random.randint(0, 10) for i in range(len(newcols))]
-print(newcols)
+    newcols = [c for c in df.columns if not should_discard(c)]
+    newcols = [rename_column(s) for s in newcols if rename_column(s) is not None]
+    newcols = list(set(newcols))
+    values = [random.randint(0, 10) for i in range(len(newcols))]
+    print(newcols)
 
-df = pd.DataFrame({"F": newcols, "V": values})
-print(df)
-df.plot.barh(x="F", y="V")
-plt.tight_layout()
-plt.show()
+    df = pd.DataFrame({"F": newcols, "V": values})
+    print(df)
+    df.plot.barh(x="F", y="V")
+    plt.tight_layout()
+    plt.show()
