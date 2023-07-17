@@ -70,7 +70,6 @@ def fourier_column(oldname: str) -> str:
         stat_name = get_fourier_stat_name(oldname)
         return f"Fourier$ ${stat_name}$ ${byte_str}"
     else:
-        print(f"Unkown feature name {oldname}")
         raise Exception(f"Unexpected feature name {oldname}")
         
 
@@ -92,14 +91,14 @@ def rename_column(oldname: str) -> str:
         return None
     oldname = oldname.lower()
     if oldname.startswith("fourier"):
-        return None
-        #return f"${fourier_column(oldname)}$"
+        return f"${fourier_column(oldname)}$"
     elif oldname.startswith("baseline"):
         return f"${baseline_column(oldname)}$"
     elif oldname.startswith("advanced"):
         return f"${advanced_column(oldname)}$"
     else:
         print("Unknown column", oldname)
+        return None
 
 if __name__ == "__main__":
     df = pd.read_csv("s9.n1.ransomware.SODINOKIBI.csv.gz")
@@ -108,10 +107,8 @@ if __name__ == "__main__":
     newcols = [rename_column(s) for s in newcols if rename_column(s) is not None]
     newcols = list(set(newcols))
     values = [random.randint(0, 10) for i in range(len(newcols))]
-    print(newcols)
 
     df = pd.DataFrame({"F": newcols, "V": values})
-    print(df)
     df.plot.barh(x="F", y="V")
     plt.tight_layout()
     plt.show()
