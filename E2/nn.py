@@ -1,10 +1,9 @@
-import tensorflow as tf
-import pandas as pd
-import numpy as np
-
-
-from typing import Any
 from dataclasses import dataclass
+from typing import Any
+
+import numpy as np
+import pandas as pd
+import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
 
 
@@ -13,8 +12,12 @@ class NNModel:
     model: Any = None
     scalar: Any = None
     scalar_initialized: bool = False
+    num_epochs: int = 50
+    patience: int = 5
 
-    def __init__(self, input_dim: int = -1):
+    def __init__(self, input_dim: int = -1, num_epochs: int = 50, patience: int = 50):
+        self.num_epochs = num_epochs
+        self.patience = patience
         assert input_dim > 0
         tf.random.set_seed(0)
         np.random.seed(0)
@@ -68,8 +71,8 @@ class NNModel:
             validation_split=0.1,
             shuffle=True,
             batch_size=32,
-            epochs=50,
-            callbacks=[tf.keras.callbacks.EarlyStopping(monitor="loss", patience=5)],
+            epochs=self.num_epochs,
+            callbacks=[tf.keras.callbacks.EarlyStopping(monitor="loss", patience=self.patience)],
         )
 
     def predict_proba(self, X):

@@ -1,12 +1,15 @@
-import pandas as pd
-import matplotlib.pyplot as plt
 import random
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
 
 def get_value_number(oldname: str) -> str:
     number = oldname.split(".")[-1]
     if number == "inf":
         number = "\\infty"
     return number
+
 
 def get_stat_name(oldname: str) -> str:
     if "autocorr" in oldname:
@@ -25,7 +28,7 @@ def get_stat_name(oldname: str) -> str:
         return f"R\\'enyi's$ $entropy$ $(\\alpha = {number})"
     elif "tsallis" in oldname:
         number = get_value_number(oldname)
-        return f"Tsallis$ $entropy$ $(q = {number})"
+        return f"Tsallis$ $entropy$ $(n = {number})"
     elif "shannon" in oldname or "shanon" in oldname:
         return "Shannon's$ $entropy"
     elif "extropy" in oldname:
@@ -39,9 +42,11 @@ def get_stat_name(oldname: str) -> str:
     else:
         raise Exception(f"Unknown statistic {oldname}")
 
+
 def get_fourier_stat_name(oldname: str) -> str:
-    return f"statistic$ ${get_stat_name(oldname)}"
-    
+    return f"{get_stat_name(oldname)}"
+
+
 def get_num_with_ordinal_indicator(oldname: str) -> str:
     number = oldname.split(".")[-1]
     if number == "1":
@@ -55,11 +60,13 @@ def get_num_with_ordinal_indicator(oldname: str) -> str:
     else:
         return number + "^{th}"
 
+
 def get_onebyte_or_fourbytes(oldname: str) -> str:
     if "4byte" in oldname:
         return "(4$ $bytes)"
     else:
         return "(1$ $byte)"
+
 
 def fourier_column(oldname: str) -> str:
     byte_str = get_onebyte_or_fourbytes(oldname)
@@ -71,13 +78,15 @@ def fourier_column(oldname: str) -> str:
         return f"Fourier$ ${stat_name}$ ${byte_str}"
     else:
         raise Exception(f"Unexpected feature name {oldname}")
-        
+
 
 def baseline_column(oldname: str) -> str:
     return get_stat_name(oldname)
 
+
 def advanced_column(oldname: str) -> str:
     return f"{get_stat_name(oldname)}"
+
 
 def should_discard(colname: str) -> bool:
     colname = colname.lower()
@@ -85,6 +94,7 @@ def should_discard(colname: str) -> bool:
         if i in colname:
             return True
     return False
+
 
 def rename_column(oldname: str) -> str:
     if should_discard(oldname):
@@ -99,6 +109,7 @@ def rename_column(oldname: str) -> str:
     else:
         print("Unknown column", oldname)
         return None
+
 
 if __name__ == "__main__":
     df = pd.read_csv("s9.n1.ransomware.SODINOKIBI.csv.gz")
