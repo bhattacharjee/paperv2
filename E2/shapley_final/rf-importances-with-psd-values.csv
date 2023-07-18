@@ -1,0 +1,583 @@
+,original_feature_name,features,importances,colors
+0,fourier.value.1byte.120,$Fourier$ $raw$ $value$ $120$ $(1$ $byte)$,0.015966060509580715,blue
+1,fourier.value.1byte.131,$Fourier$ $raw$ $value$ $131$ $(1$ $byte)$,0.012397570689707921,blue
+2,fourier.stat.1byte.std,$Fourier$ $standard$ $deviation$ $(1$ $byte)$,0.011350804743806737,blue
+3,fourier.value.1byte.132,$Fourier$ $raw$ $value$ $132$ $(1$ $byte)$,0.009564729083816483,blue
+4,fourier.value.1byte.128,$Fourier$ $raw$ $value$ $128$ $(1$ $byte)$,0.008716907841865905,blue
+5,fourier.value.1byte.123,$Fourier$ $raw$ $value$ $123$ $(1$ $byte)$,0.008516441918267737,blue
+6,advanced.dit.renyi.full.inf,$R\'enyi's$ $entropy$ $(\alpha = \infty)$,0.007698591758103506,red
+7,fourier.value.1byte.130,$Fourier$ $raw$ $value$ $130$ $(1$ $byte)$,0.007612080890314017,blue
+8,fourier.value.4byte.155,$Fourier$ $raw$ $value$ $155$ $(4$ $bytes)$,0.006958015342503378,blue
+9,baseline.autocorrelation_full,$auto$-$correlation$,0.0069295213810944565,green
+10,fourier.stat.1byte.mean,$Fourier$ ${mean}$ $(1$ $byte)$,0.006717722995568767,blue
+11,fourier.value.1byte.121,$Fourier$ $raw$ $value$ $121$ $(1$ $byte)$,0.006617110806543206,blue
+12,fourier.stat.4byte.mean,$Fourier$ ${mean}$ $(4$ $bytes)$,0.006397377150860275,blue
+13,baseline.montecarlo_pi,$Monte$-$Carlo$ $\pi$,0.006145405027521925,green
+14,advanced.skew_full,$skewness$,0.005980856439699503,red
+15,fourier.stat.4byte.std,$Fourier$ $standard$ $deviation$ $(4$ $bytes)$,0.005964188116791276,blue
+16,fourier.value.1byte.119,$Fourier$ $raw$ $value$ $119$ $(1$ $byte)$,0.005884809892378178,blue
+17,fourier.value.1byte.147,$Fourier$ $raw$ $value$ $147$ $(1$ $byte)$,0.00575831738784883,blue
+18,advanced.dit.renyi.full.10,$R\'enyi's$ $entropy$ $(\alpha = 10)$,0.005518287031575012,red
+19,advanced.dit.tsallis.full.2,$Tsallis$ $entropy$ $(q = 2)$,0.005438641274401491,red
+20,advanced.dit.renyi.full.8,$R\'enyi's$ $entropy$ $(\alpha = 8)$,0.005374248523810092,red
+21,baseline.chisquare_full,$chi$-$squared$,0.005300850522288264,green
+22,fourier.value.4byte.156,$Fourier$ $raw$ $value$ $156$ $(4$ $bytes)$,0.005279793488202507,blue
+23,advanced.dit.renyi.full.3,$R\'enyi's$ $entropy$ $(\alpha = 3)$,0.005260882015500618,red
+24,fourier.stat.4byte.chisq,$Fourier$ $chi$-$squared$ $(4$ $bytes)$,0.005255788845327668,blue
+25,baseline.shannon_entropy,$Shannon's$ $entropy$,0.005250535510126089,green
+26,fourier.value.4byte.96,$Fourier$ $raw$ $value$ $96$ $(4$ $bytes)$,0.005113611896127108,blue
+27,fourier.value.4byte.108,$Fourier$ $raw$ $value$ $108$ $(4$ $bytes)$,0.005073935331897403,blue
+28,fourier.value.1byte.97,$Fourier$ $raw$ $value$ $97$ $(1$ $byte)$,0.005063980856235526,blue
+29,advanced.dit.renyi.full.2,$R\'enyi's$ $entropy$ $(\alpha = 2)$,0.004928223228465536,red
+30,fourier.value.1byte.96,$Fourier$ $raw$ $value$ $96$ $(1$ $byte)$,0.004898011533660495,blue
+31,advanced.dit.renyi.full.1,$R\'enyi's$ $entropy$ $(\alpha = 1)$,0.004895219465415466,red
+32,fourier.stat.1byte.autocorr,$Fourier$ $auto$-$correlation$ $(1$ $byte)$,0.004893865576812115,blue
+33,advanced.dit.renyi.full.4,$R\'enyi's$ $entropy$ $(\alpha = 4)$,0.0048281019619602706,red
+34,fourier.value.1byte.104,$Fourier$ $raw$ $value$ $104$ $(1$ $byte)$,0.004813238854310708,blue
+35,advanced.moment_full.3,$3^{rd}$ ${moment}$,0.004807810159899726,red
+36,fourier.value.1byte.155,$Fourier$ $raw$ $value$ $155$ $(1$ $byte)$,0.004726442261666727,blue
+37,advanced.dit.tsallis.full.1,$Tsallis$ $entropy$ $(q = 1)$,0.004683058631744433,red
+38,advanced.dit.renyi.full.7,$R\'enyi's$ $entropy$ $(\alpha = 7)$,0.004453874821978568,red
+39,advanced.dit.renyi.full.6,$R\'enyi's$ $entropy$ $(\alpha = 6)$,0.004280527601629023,red
+40,advanced.dit.extropy.full,$extropy$,0.003991242584319754,red
+41,advanced.dit.renyi.full.9,$R\'enyi's$ $entropy$ $(\alpha = 9)$,0.003968518707998716,red
+42,fourier.value.1byte.154,$Fourier$ $raw$ $value$ $154$ $(1$ $byte)$,0.003939369306390284,blue
+43,fourier.value.1byte.33,$Fourier$ $raw$ $value$ $33$ $(1$ $byte)$,0.0038308459769928944,blue
+44,fourier.value.1byte.218,$Fourier$ $raw$ $value$ $218$ $(1$ $byte)$,0.0037911976258116573,blue
+45,advanced.dit.renyi.full.5,$R\'enyi's$ $entropy$ $(\alpha = 5)$,0.003781593084214699,red
+46,fourier.value.4byte.97,$Fourier$ $raw$ $value$ $97$ $(4$ $bytes)$,0.003743170828562576,blue
+47,fourier.value.1byte.191,$Fourier$ $raw$ $value$ $191$ $(1$ $byte)$,0.003730206115911207,blue
+48,fourier.stat.1byte.chisq,$Fourier$ $chi$-$squared$ $(1$ $byte)$,0.003676228001921823,blue
+49,advanced.moment_full.2,$2^{nd}$ ${moment}$,0.0036609942928023122,red
+50,fourier.value.1byte.129,$Fourier$ $raw$ $value$ $129$ $(1$ $byte)$,0.0035709902353882935,blue
+51,fourier.stat.4byte.autocorr,$Fourier$ $auto$-$correlation$ $(4$ $bytes)$,0.00352267003274784,blue
+52,advanced.kurtosis_full,$kurtosis$,0.003510715360096508,red
+53,fourier.value.4byte.154,$Fourier$ $raw$ $value$ $154$ $(4$ $bytes)$,0.0035079763757150826,blue
+54,fourier.value.4byte.250,$Fourier$ $raw$ $value$ $250$ $(4$ $bytes)$,0.003506339719747742,blue
+55,fourier.value.1byte.60,$Fourier$ $raw$ $value$ $60$ $(1$ $byte)$,0.0035005361935985402,blue
+56,fourier.stat.4byte.moment.2,$Fourier$ $2^{nd}$ ${moment}$ $(4$ $bytes)$,0.0033726444900168307,blue
+57,fourier.value.1byte.181,$Fourier$ $raw$ $value$ $181$ $(1$ $byte)$,0.003348446852995754,blue
+58,fourier.value.4byte.249,$Fourier$ $raw$ $value$ $249$ $(4$ $bytes)$,0.00314316651151979,blue
+59,fourier.value.1byte.70,$Fourier$ $raw$ $value$ $70$ $(1$ $byte)$,0.0031218202158580038,blue
+60,fourier.value.4byte.143,$Fourier$ $raw$ $value$ $143$ $(4$ $bytes)$,0.0030956817222692282,blue
+61,fourier.value.1byte.186,$Fourier$ $raw$ $value$ $186$ $(1$ $byte)$,0.0030841737069198854,blue
+62,fourier.value.4byte.142,$Fourier$ $raw$ $value$ $142$ $(4$ $bytes)$,0.0030052067620764877,blue
+63,fourier.value.1byte.150,$Fourier$ $raw$ $value$ $150$ $(1$ $byte)$,0.0029971029294556402,blue
+64,fourier.value.4byte.95,$Fourier$ $raw$ $value$ $95$ $(4$ $bytes)$,0.0028985761036640916,blue
+65,advanced.moment_full.4,$4^{th}$ ${moment}$,0.0027959549999158856,red
+66,fourier.value.1byte.127,$Fourier$ $raw$ $value$ $127$ $(1$ $byte)$,0.002769164521529653,blue
+67,fourier.stat.1byte.moment.2,$Fourier$ $2^{nd}$ ${moment}$ $(1$ $byte)$,0.002752806031653941,blue
+68,advanced.moment_full.5,$5^{th}$ ${moment}$,0.002646150747982381,red
+69,fourier.value.1byte.138,$Fourier$ $raw$ $value$ $138$ $(1$ $byte)$,0.0025745759886885056,blue
+70,fourier.value.1byte.148,$Fourier$ $raw$ $value$ $148$ $(1$ $byte)$,0.0025386267491156805,blue
+71,fourier.value.1byte.65,$Fourier$ $raw$ $value$ $65$ $(1$ $byte)$,0.0024868974711322513,blue
+72,fourier.value.1byte.122,$Fourier$ $raw$ $value$ $122$ $(1$ $byte)$,0.0024675984904635544,blue
+73,fourier.value.4byte.127,$Fourier$ $raw$ $value$ $127$ $(4$ $bytes)$,0.0024600090329303845,blue
+74,fourier.value.1byte.101,$Fourier$ $raw$ $value$ $101$ $(1$ $byte)$,0.0024544043329561118,blue
+75,fourier.value.1byte.124,$Fourier$ $raw$ $value$ $124$ $(1$ $byte)$,0.0024382954587988054,blue
+76,advanced.moment_full.7,$7^{th}$ ${moment}$,0.0023829239107992376,red
+77,fourier.value.4byte.109,$Fourier$ $raw$ $value$ $109$ $(4$ $bytes)$,0.0023693345481502074,blue
+78,fourier.value.4byte.219,$Fourier$ $raw$ $value$ $219$ $(4$ $bytes)$,0.0023153088922741815,blue
+79,fourier.value.1byte.103,$Fourier$ $raw$ $value$ $103$ $(1$ $byte)$,0.0023135753591290737,blue
+80,fourier.value.1byte.158,$Fourier$ $raw$ $value$ $158$ $(1$ $byte)$,0.0022961138051944287,blue
+81,fourier.value.1byte.221,$Fourier$ $raw$ $value$ $221$ $(1$ $byte)$,0.002272627298377584,blue
+82,advanced.dit.tsallis.full.3,$Tsallis$ $entropy$ $(q = 3)$,0.0022645515984454686,red
+83,fourier.value.4byte.32,$Fourier$ $raw$ $value$ $32$ $(4$ $bytes)$,0.0022611699233396365,blue
+84,fourier.value.4byte.125,$Fourier$ $raw$ $value$ $125$ $(4$ $bytes)$,0.002253121947470064,blue
+85,advanced.moment_full.9,$9^{th}$ ${moment}$,0.0022432788426153573,red
+86,fourier.value.4byte.2,$Fourier$ $raw$ $value$ $2$ $(4$ $bytes)$,0.0022168796992170785,blue
+87,fourier.value.1byte.159,$Fourier$ $raw$ $value$ $159$ $(1$ $byte)$,0.0021966392974771104,blue
+88,fourier.value.1byte.88,$Fourier$ $raw$ $value$ $88$ $(1$ $byte)$,0.0021478318327808714,blue
+89,fourier.value.4byte.5,$Fourier$ $raw$ $value$ $5$ $(4$ $bytes)$,0.0021196610475337054,blue
+90,fourier.value.4byte.1,$Fourier$ $raw$ $value$ $1$ $(4$ $bytes)$,0.0020964685495503672,blue
+91,fourier.value.1byte.126,$Fourier$ $raw$ $value$ $126$ $(1$ $byte)$,0.002081483192252215,blue
+92,fourier.value.1byte.114,$Fourier$ $raw$ $value$ $114$ $(1$ $byte)$,0.002076963194854923,blue
+93,fourier.value.1byte.73,$Fourier$ $raw$ $value$ $73$ $(1$ $byte)$,0.0020532122202154197,blue
+94,fourier.value.4byte.246,$Fourier$ $raw$ $value$ $246$ $(4$ $bytes)$,0.0020219246590451874,blue
+95,fourier.value.1byte.53,$Fourier$ $raw$ $value$ $53$ $(1$ $byte)$,0.0020201092010847764,blue
+96,advanced.moment_full.11,$11^{th}$ ${moment}$,0.0020091360201543486,red
+97,fourier.value.1byte.92,$Fourier$ $raw$ $value$ $92$ $(1$ $byte)$,0.0020090092547161227,blue
+98,fourier.value.1byte.113,$Fourier$ $raw$ $value$ $113$ $(1$ $byte)$,0.0019958578842588807,blue
+99,fourier.value.1byte.30,$Fourier$ $raw$ $value$ $30$ $(1$ $byte)$,0.0019865204316147174,blue
+100,fourier.value.1byte.160,$Fourier$ $raw$ $value$ $160$ $(1$ $byte)$,0.0019577780601797994,blue
+101,fourier.value.1byte.171,$Fourier$ $raw$ $value$ $171$ $(1$ $byte)$,0.0019400569795480927,blue
+102,fourier.stat.4byte.moment.4,$Fourier$ $4^{th}$ ${moment}$ $(4$ $bytes)$,0.0019108029193596473,blue
+103,fourier.value.1byte.125,$Fourier$ $raw$ $value$ $125$ $(1$ $byte)$,0.0018989580209358692,blue
+104,fourier.value.1byte.217,$Fourier$ $raw$ $value$ $217$ $(1$ $byte)$,0.001865958431288599,blue
+105,advanced.moment_full.12,$12^{th}$ ${moment}$,0.001828097678322733,red
+106,fourier.value.1byte.102,$Fourier$ $raw$ $value$ $102$ $(1$ $byte)$,0.00182175042741437,blue
+107,advanced.moment_full.6,$6^{th}$ ${moment}$,0.0018198769241992954,red
+108,fourier.value.1byte.14,$Fourier$ $raw$ $value$ $14$ $(1$ $byte)$,0.0017971350147229401,blue
+109,fourier.value.1byte.227,$Fourier$ $raw$ $value$ $227$ $(1$ $byte)$,0.001795571959767195,blue
+110,fourier.value.1byte.164,$Fourier$ $raw$ $value$ $164$ $(1$ $byte)$,0.0017840836032657567,blue
+111,fourier.value.1byte.213,$Fourier$ $raw$ $value$ $213$ $(1$ $byte)$,0.0017760658531824017,blue
+112,fourier.value.1byte.149,$Fourier$ $raw$ $value$ $149$ $(1$ $byte)$,0.001771786224834474,blue
+113,advanced.moment_full.10,$10^{th}$ ${moment}$,0.001767532990297645,red
+114,fourier.value.1byte.216,$Fourier$ $raw$ $value$ $216$ $(1$ $byte)$,0.0017523513090663709,blue
+115,fourier.value.1byte.28,$Fourier$ $raw$ $value$ $28$ $(1$ $byte)$,0.0017409373174844464,blue
+116,advanced.dit.tsallis.full.0,$Tsallis$ $entropy$ $(q = 0)$,0.001720953123372522,red
+117,fourier.value.1byte.91,$Fourier$ $raw$ $value$ $91$ $(1$ $byte)$,0.0017159167302911746,blue
+118,fourier.value.1byte.34,$Fourier$ $raw$ $value$ $34$ $(1$ $byte)$,0.001711665890707586,blue
+119,fourier.value.4byte.21,$Fourier$ $raw$ $value$ $21$ $(4$ $bytes)$,0.0017105895911813504,blue
+120,fourier.value.1byte.223,$Fourier$ $raw$ $value$ $223$ $(1$ $byte)$,0.0017058911411201104,blue
+121,fourier.value.4byte.120,$Fourier$ $raw$ $value$ $120$ $(4$ $bytes)$,0.0017025056475901018,blue
+122,fourier.value.1byte.7,$Fourier$ $raw$ $value$ $7$ $(1$ $byte)$,0.0016984405112493869,blue
+123,fourier.value.1byte.243,$Fourier$ $raw$ $value$ $243$ $(1$ $byte)$,0.0016976162063416797,blue
+124,fourier.value.1byte.244,$Fourier$ $raw$ $value$ $244$ $(1$ $byte)$,0.0016934564686532985,blue
+125,fourier.value.1byte.146,$Fourier$ $raw$ $value$ $146$ $(1$ $byte)$,0.0016850819795463728,blue
+126,fourier.value.1byte.8,$Fourier$ $raw$ $value$ $8$ $(1$ $byte)$,0.001683108280177686,blue
+127,fourier.value.4byte.124,$Fourier$ $raw$ $value$ $124$ $(4$ $bytes)$,0.001667222066294761,blue
+128,advanced.moment_full.8,$8^{th}$ ${moment}$,0.0016608306078228683,red
+129,fourier.value.4byte.4,$Fourier$ $raw$ $value$ $4$ $(4$ $bytes)$,0.0016598966557336754,blue
+130,fourier.value.1byte.9,$Fourier$ $raw$ $value$ $9$ $(1$ $byte)$,0.0016561058918316154,blue
+131,advanced.moment_full.14,$14^{th}$ ${moment}$,0.001643198611940783,red
+132,fourier.value.1byte.69,$Fourier$ $raw$ $value$ $69$ $(1$ $byte)$,0.0016328240956132883,blue
+133,fourier.value.1byte.38,$Fourier$ $raw$ $value$ $38$ $(1$ $byte)$,0.0016293597363729883,blue
+134,fourier.value.4byte.126,$Fourier$ $raw$ $value$ $126$ $(4$ $bytes)$,0.001623949169937621,blue
+135,advanced.moment_full.13,$13^{th}$ ${moment}$,0.0016234684523004975,red
+136,fourier.value.4byte.144,$Fourier$ $raw$ $value$ $144$ $(4$ $bytes)$,0.0016173690250600138,blue
+137,fourier.value.4byte.230,$Fourier$ $raw$ $value$ $230$ $(4$ $bytes)$,0.0016156983667915202,blue
+138,fourier.value.1byte.40,$Fourier$ $raw$ $value$ $40$ $(1$ $byte)$,0.001594060461397591,blue
+139,fourier.value.1byte.117,$Fourier$ $raw$ $value$ $117$ $(1$ $byte)$,0.0015907656994167826,blue
+140,fourier.value.1byte.208,$Fourier$ $raw$ $value$ $208$ $(1$ $byte)$,0.0015842758580811422,blue
+141,fourier.value.1byte.89,$Fourier$ $raw$ $value$ $89$ $(1$ $byte)$,0.0015819331226128864,blue
+142,fourier.value.1byte.43,$Fourier$ $raw$ $value$ $43$ $(1$ $byte)$,0.0015702452908730635,blue
+143,fourier.value.1byte.178,$Fourier$ $raw$ $value$ $178$ $(1$ $byte)$,0.0015691886103134682,blue
+144,fourier.value.1byte.189,$Fourier$ $raw$ $value$ $189$ $(1$ $byte)$,0.0015644276345920536,blue
+145,fourier.value.1byte.87,$Fourier$ $raw$ $value$ $87$ $(1$ $byte)$,0.0015365593003309585,blue
+146,fourier.value.1byte.44,$Fourier$ $raw$ $value$ $44$ $(1$ $byte)$,0.0015343167682504838,blue
+147,fourier.value.4byte.3,$Fourier$ $raw$ $value$ $3$ $(4$ $bytes)$,0.0015236334030984359,blue
+148,fourier.value.1byte.197,$Fourier$ $raw$ $value$ $197$ $(1$ $byte)$,0.001520476888176101,blue
+149,fourier.value.1byte.16,$Fourier$ $raw$ $value$ $16$ $(1$ $byte)$,0.0015200598532389194,blue
+150,fourier.stat.4byte.moment.5,$Fourier$ $5^{th}$ ${moment}$ $(4$ $bytes)$,0.0015199020157419874,blue
+151,fourier.value.1byte.182,$Fourier$ $raw$ $value$ $182$ $(1$ $byte)$,0.0015109138050945802,blue
+152,fourier.value.1byte.187,$Fourier$ $raw$ $value$ $187$ $(1$ $byte)$,0.0015018799358071891,blue
+153,fourier.value.1byte.236,$Fourier$ $raw$ $value$ $236$ $(1$ $byte)$,0.0015007901667324305,blue
+154,fourier.value.1byte.49,$Fourier$ $raw$ $value$ $49$ $(1$ $byte)$,0.0015001951870232482,blue
+155,fourier.value.1byte.10,$Fourier$ $raw$ $value$ $10$ $(1$ $byte)$,0.0014976959063557212,blue
+156,fourier.value.1byte.116,$Fourier$ $raw$ $value$ $116$ $(1$ $byte)$,0.001493074916282397,blue
+157,fourier.value.1byte.59,$Fourier$ $raw$ $value$ $59$ $(1$ $byte)$,0.0014926072487578288,blue
+158,fourier.value.1byte.99,$Fourier$ $raw$ $value$ $99$ $(1$ $byte)$,0.0014914493093553935,blue
+159,fourier.value.1byte.238,$Fourier$ $raw$ $value$ $238$ $(1$ $byte)$,0.0014851074779093346,blue
+160,fourier.value.1byte.235,$Fourier$ $raw$ $value$ $235$ $(1$ $byte)$,0.0014833042528461498,blue
+161,fourier.value.4byte.107,$Fourier$ $raw$ $value$ $107$ $(4$ $bytes)$,0.0014745152761160751,blue
+162,fourier.value.1byte.25,$Fourier$ $raw$ $value$ $25$ $(1$ $byte)$,0.0014697734421494743,blue
+163,fourier.value.1byte.177,$Fourier$ $raw$ $value$ $177$ $(1$ $byte)$,0.0014665088482450955,blue
+164,fourier.value.1byte.57,$Fourier$ $raw$ $value$ $57$ $(1$ $byte)$,0.00146642319492546,blue
+165,fourier.value.4byte.248,$Fourier$ $raw$ $value$ $248$ $(4$ $bytes)$,0.0014643276189767124,blue
+166,fourier.value.1byte.62,$Fourier$ $raw$ $value$ $62$ $(1$ $byte)$,0.0014607991672794685,blue
+167,fourier.value.4byte.6,$Fourier$ $raw$ $value$ $6$ $(4$ $bytes)$,0.001460619604517468,blue
+168,fourier.value.1byte.95,$Fourier$ $raw$ $value$ $95$ $(1$ $byte)$,0.0014551009570193578,blue
+169,fourier.value.1byte.198,$Fourier$ $raw$ $value$ $198$ $(1$ $byte)$,0.0014525209056752814,blue
+170,fourier.value.4byte.128,$Fourier$ $raw$ $value$ $128$ $(4$ $bytes)$,0.0014500313690499174,blue
+171,fourier.value.1byte.207,$Fourier$ $raw$ $value$ $207$ $(1$ $byte)$,0.001449133880450818,blue
+172,fourier.value.1byte.137,$Fourier$ $raw$ $value$ $137$ $(1$ $byte)$,0.0014409286605289481,blue
+173,fourier.value.4byte.18,$Fourier$ $raw$ $value$ $18$ $(4$ $bytes)$,0.0014386255680665413,blue
+174,fourier.value.1byte.110,$Fourier$ $raw$ $value$ $110$ $(1$ $byte)$,0.0014384659556625234,blue
+175,fourier.value.1byte.93,$Fourier$ $raw$ $value$ $93$ $(1$ $byte)$,0.0014335276824844257,blue
+176,fourier.value.1byte.163,$Fourier$ $raw$ $value$ $163$ $(1$ $byte)$,0.0014327707167013258,blue
+177,fourier.value.1byte.168,$Fourier$ $raw$ $value$ $168$ $(1$ $byte)$,0.0014287599592951428,blue
+178,fourier.value.1byte.142,$Fourier$ $raw$ $value$ $142$ $(1$ $byte)$,0.0014226276562095536,blue
+179,fourier.value.1byte.190,$Fourier$ $raw$ $value$ $190$ $(1$ $byte)$,0.0014110417187893653,blue
+180,fourier.value.4byte.33,$Fourier$ $raw$ $value$ $33$ $(4$ $bytes)$,0.0014091750324679922,blue
+181,fourier.value.1byte.241,$Fourier$ $raw$ $value$ $241$ $(1$ $byte)$,0.001405115989388268,blue
+182,fourier.value.4byte.123,$Fourier$ $raw$ $value$ $123$ $(4$ $bytes)$,0.0014030681652247314,blue
+183,fourier.value.1byte.134,$Fourier$ $raw$ $value$ $134$ $(1$ $byte)$,0.001402809068117507,blue
+184,fourier.value.4byte.247,$Fourier$ $raw$ $value$ $247$ $(4$ $bytes)$,0.0014026634032967581,blue
+185,fourier.value.1byte.78,$Fourier$ $raw$ $value$ $78$ $(1$ $byte)$,0.001399757287718574,blue
+186,fourier.value.1byte.156,$Fourier$ $raw$ $value$ $156$ $(1$ $byte)$,0.0013983145354680968,blue
+187,fourier.value.4byte.182,$Fourier$ $raw$ $value$ $182$ $(4$ $bytes)$,0.0013822276415987418,blue
+188,fourier.value.1byte.80,$Fourier$ $raw$ $value$ $80$ $(1$ $byte)$,0.0013809679662335067,blue
+189,fourier.value.4byte.245,$Fourier$ $raw$ $value$ $245$ $(4$ $bytes)$,0.0013808172718356168,blue
+190,fourier.value.1byte.66,$Fourier$ $raw$ $value$ $66$ $(1$ $byte)$,0.0013778088748289358,blue
+191,fourier.value.1byte.50,$Fourier$ $raw$ $value$ $50$ $(1$ $byte)$,0.0013743366465577853,blue
+192,fourier.value.1byte.151,$Fourier$ $raw$ $value$ $151$ $(1$ $byte)$,0.001371478075721969,blue
+193,fourier.value.1byte.161,$Fourier$ $raw$ $value$ $161$ $(1$ $byte)$,0.00137048576056654,blue
+194,fourier.value.1byte.202,$Fourier$ $raw$ $value$ $202$ $(1$ $byte)$,0.0013674466812723485,blue
+195,fourier.value.1byte.64,$Fourier$ $raw$ $value$ $64$ $(1$ $byte)$,0.0013621730962164924,blue
+196,fourier.value.1byte.107,$Fourier$ $raw$ $value$ $107$ $(1$ $byte)$,0.001361008309334528,blue
+197,fourier.value.1byte.174,$Fourier$ $raw$ $value$ $174$ $(1$ $byte)$,0.0013593726484268356,blue
+198,fourier.value.4byte.222,$Fourier$ $raw$ $value$ $222$ $(4$ $bytes)$,0.0013587015372197985,blue
+199,fourier.value.1byte.195,$Fourier$ $raw$ $value$ $195$ $(1$ $byte)$,0.0013555421681695917,blue
+200,fourier.value.1byte.211,$Fourier$ $raw$ $value$ $211$ $(1$ $byte)$,0.0013549025389413191,blue
+201,fourier.value.1byte.234,$Fourier$ $raw$ $value$ $234$ $(1$ $byte)$,0.001346863303582097,blue
+202,fourier.value.1byte.42,$Fourier$ $raw$ $value$ $42$ $(1$ $byte)$,0.001341212906732302,blue
+203,fourier.value.1byte.201,$Fourier$ $raw$ $value$ $201$ $(1$ $byte)$,0.0013390100585095948,blue
+204,fourier.value.1byte.242,$Fourier$ $raw$ $value$ $242$ $(1$ $byte)$,0.0013366354919122402,blue
+205,fourier.value.1byte.212,$Fourier$ $raw$ $value$ $212$ $(1$ $byte)$,0.0013355892884696025,blue
+206,fourier.value.1byte.249,$Fourier$ $raw$ $value$ $249$ $(1$ $byte)$,0.0013281895201025418,blue
+207,fourier.value.1byte.162,$Fourier$ $raw$ $value$ $162$ $(1$ $byte)$,0.0013239054017554664,blue
+208,fourier.value.1byte.17,$Fourier$ $raw$ $value$ $17$ $(1$ $byte)$,0.00132147485424946,blue
+209,fourier.value.1byte.46,$Fourier$ $raw$ $value$ $46$ $(1$ $byte)$,0.0013206439797807377,blue
+210,fourier.value.4byte.112,$Fourier$ $raw$ $value$ $112$ $(4$ $bytes)$,0.0013205577998447323,blue
+211,fourier.value.1byte.84,$Fourier$ $raw$ $value$ $84$ $(1$ $byte)$,0.0013201961464642537,blue
+212,fourier.value.1byte.20,$Fourier$ $raw$ $value$ $20$ $(1$ $byte)$,0.0013195021014100181,blue
+213,fourier.value.1byte.188,$Fourier$ $raw$ $value$ $188$ $(1$ $byte)$,0.0013103560653646292,blue
+214,fourier.value.4byte.139,$Fourier$ $raw$ $value$ $139$ $(4$ $bytes)$,0.0013089217703991171,blue
+215,fourier.value.1byte.2,$Fourier$ $raw$ $value$ $2$ $(1$ $byte)$,0.0013085237667229224,blue
+216,fourier.value.4byte.233,$Fourier$ $raw$ $value$ $233$ $(4$ $bytes)$,0.0013051277208218446,blue
+217,fourier.value.1byte.51,$Fourier$ $raw$ $value$ $51$ $(1$ $byte)$,0.001304285731235865,blue
+218,fourier.value.1byte.3,$Fourier$ $raw$ $value$ $3$ $(1$ $byte)$,0.0013041573479814893,blue
+219,fourier.value.1byte.39,$Fourier$ $raw$ $value$ $39$ $(1$ $byte)$,0.0013040815990130866,blue
+220,fourier.value.4byte.243,$Fourier$ $raw$ $value$ $243$ $(4$ $bytes)$,0.0013012921624250538,blue
+221,fourier.value.1byte.112,$Fourier$ $raw$ $value$ $112$ $(1$ $byte)$,0.001299895494294096,blue
+222,fourier.value.1byte.141,$Fourier$ $raw$ $value$ $141$ $(1$ $byte)$,0.0012965515043840115,blue
+223,fourier.value.1byte.135,$Fourier$ $raw$ $value$ $135$ $(1$ $byte)$,0.001293568604874018,blue
+224,fourier.value.1byte.199,$Fourier$ $raw$ $value$ $199$ $(1$ $byte)$,0.001293085697757916,blue
+225,fourier.value.4byte.229,$Fourier$ $raw$ $value$ $229$ $(4$ $bytes)$,0.001292790105080856,blue
+226,fourier.value.1byte.24,$Fourier$ $raw$ $value$ $24$ $(1$ $byte)$,0.0012920495681752143,blue
+227,fourier.value.4byte.133,$Fourier$ $raw$ $value$ $133$ $(4$ $bytes)$,0.0012872314172819575,blue
+228,fourier.value.1byte.4,$Fourier$ $raw$ $value$ $4$ $(1$ $byte)$,0.0012862557086524768,blue
+229,fourier.value.1byte.67,$Fourier$ $raw$ $value$ $67$ $(1$ $byte)$,0.0012860864699120176,blue
+230,fourier.value.1byte.100,$Fourier$ $raw$ $value$ $100$ $(1$ $byte)$,0.0012859827063723829,blue
+231,fourier.value.1byte.72,$Fourier$ $raw$ $value$ $72$ $(1$ $byte)$,0.0012849011098465496,blue
+232,fourier.value.4byte.8,$Fourier$ $raw$ $value$ $8$ $(4$ $bytes)$,0.00128156517270444,blue
+233,fourier.value.1byte.172,$Fourier$ $raw$ $value$ $172$ $(1$ $byte)$,0.0012811609768018334,blue
+234,fourier.value.1byte.76,$Fourier$ $raw$ $value$ $76$ $(1$ $byte)$,0.0012805714025694922,blue
+235,fourier.value.1byte.56,$Fourier$ $raw$ $value$ $56$ $(1$ $byte)$,0.0012755312042256053,blue
+236,fourier.value.1byte.11,$Fourier$ $raw$ $value$ $11$ $(1$ $byte)$,0.0012710476491425578,blue
+237,fourier.value.1byte.6,$Fourier$ $raw$ $value$ $6$ $(1$ $byte)$,0.0012706360986691168,blue
+238,fourier.value.4byte.118,$Fourier$ $raw$ $value$ $118$ $(4$ $bytes)$,0.0012649374522595797,blue
+239,fourier.value.1byte.61,$Fourier$ $raw$ $value$ $61$ $(1$ $byte)$,0.0012632046912381953,blue
+240,fourier.value.4byte.132,$Fourier$ $raw$ $value$ $132$ $(4$ $bytes)$,0.001262627626325529,blue
+241,fourier.value.1byte.35,$Fourier$ $raw$ $value$ $35$ $(1$ $byte)$,0.0012607901622310633,blue
+242,fourier.value.1byte.133,$Fourier$ $raw$ $value$ $133$ $(1$ $byte)$,0.0012605316656662318,blue
+243,fourier.stat.4byte.moment.3,$Fourier$ $3^{rd}$ ${moment}$ $(4$ $bytes)$,0.001259953134230104,blue
+244,fourier.value.1byte.152,$Fourier$ $raw$ $value$ $152$ $(1$ $byte)$,0.0012552923340146734,blue
+245,fourier.value.1byte.185,$Fourier$ $raw$ $value$ $185$ $(1$ $byte)$,0.0012531119445140652,blue
+246,fourier.value.1byte.231,$Fourier$ $raw$ $value$ $231$ $(1$ $byte)$,0.0012525105117277258,blue
+247,fourier.value.1byte.245,$Fourier$ $raw$ $value$ $245$ $(1$ $byte)$,0.0012522549979207013,blue
+248,fourier.value.1byte.26,$Fourier$ $raw$ $value$ $26$ $(1$ $byte)$,0.001250839577715721,blue
+249,fourier.value.1byte.145,$Fourier$ $raw$ $value$ $145$ $(1$ $byte)$,0.001250539061698785,blue
+250,fourier.value.1byte.248,$Fourier$ $raw$ $value$ $248$ $(1$ $byte)$,0.0012504105575169757,blue
+251,fourier.value.1byte.209,$Fourier$ $raw$ $value$ $209$ $(1$ $byte)$,0.0012483246502336621,blue
+252,fourier.value.1byte.118,$Fourier$ $raw$ $value$ $118$ $(1$ $byte)$,0.0012471268167683065,blue
+253,fourier.value.1byte.228,$Fourier$ $raw$ $value$ $228$ $(1$ $byte)$,0.00124596598583266,blue
+254,fourier.value.4byte.157,$Fourier$ $raw$ $value$ $157$ $(4$ $bytes)$,0.0012458001375151343,blue
+255,fourier.value.1byte.204,$Fourier$ $raw$ $value$ $204$ $(1$ $byte)$,0.0012457286759193858,blue
+256,fourier.value.1byte.47,$Fourier$ $raw$ $value$ $47$ $(1$ $byte)$,0.001245177522591438,blue
+257,fourier.value.1byte.210,$Fourier$ $raw$ $value$ $210$ $(1$ $byte)$,0.0012418191599326922,blue
+258,fourier.value.1byte.205,$Fourier$ $raw$ $value$ $205$ $(1$ $byte)$,0.0012411444531006425,blue
+259,fourier.value.1byte.222,$Fourier$ $raw$ $value$ $222$ $(1$ $byte)$,0.001240134962298807,blue
+260,fourier.value.1byte.224,$Fourier$ $raw$ $value$ $224$ $(1$ $byte)$,0.0012395527503233543,blue
+261,fourier.value.1byte.193,$Fourier$ $raw$ $value$ $193$ $(1$ $byte)$,0.0012344687137129569,blue
+262,fourier.value.1byte.219,$Fourier$ $raw$ $value$ $219$ $(1$ $byte)$,0.001233938347506213,blue
+263,fourier.value.1byte.194,$Fourier$ $raw$ $value$ $194$ $(1$ $byte)$,0.0012330860893291693,blue
+264,fourier.value.1byte.27,$Fourier$ $raw$ $value$ $27$ $(1$ $byte)$,0.001232323297387313,blue
+265,fourier.value.4byte.129,$Fourier$ $raw$ $value$ $129$ $(4$ $bytes)$,0.0012318767812485212,blue
+266,fourier.value.1byte.214,$Fourier$ $raw$ $value$ $214$ $(1$ $byte)$,0.0012315096707002844,blue
+267,fourier.value.1byte.45,$Fourier$ $raw$ $value$ $45$ $(1$ $byte)$,0.0012278399205332229,blue
+268,fourier.value.1byte.237,$Fourier$ $raw$ $value$ $237$ $(1$ $byte)$,0.001227646578595725,blue
+269,fourier.value.1byte.247,$Fourier$ $raw$ $value$ $247$ $(1$ $byte)$,0.0012271347630472599,blue
+270,fourier.value.1byte.13,$Fourier$ $raw$ $value$ $13$ $(1$ $byte)$,0.0012271233721703038,blue
+271,fourier.value.1byte.12,$Fourier$ $raw$ $value$ $12$ $(1$ $byte)$,0.0012259027953424352,blue
+272,fourier.value.1byte.109,$Fourier$ $raw$ $value$ $109$ $(1$ $byte)$,0.001225450568116265,blue
+273,fourier.value.1byte.206,$Fourier$ $raw$ $value$ $206$ $(1$ $byte)$,0.0012250467897167202,blue
+274,fourier.value.1byte.175,$Fourier$ $raw$ $value$ $175$ $(1$ $byte)$,0.0012240869298757071,blue
+275,fourier.value.1byte.41,$Fourier$ $raw$ $value$ $41$ $(1$ $byte)$,0.0012227635847176287,blue
+276,fourier.value.1byte.167,$Fourier$ $raw$ $value$ $167$ $(1$ $byte)$,0.0012222706666823791,blue
+277,fourier.value.1byte.19,$Fourier$ $raw$ $value$ $19$ $(1$ $byte)$,0.0012188985529424344,blue
+278,fourier.value.4byte.140,$Fourier$ $raw$ $value$ $140$ $(4$ $bytes)$,0.001218850396721153,blue
+279,fourier.value.4byte.130,$Fourier$ $raw$ $value$ $130$ $(4$ $bytes)$,0.0012187993349951985,blue
+280,fourier.value.1byte.240,$Fourier$ $raw$ $value$ $240$ $(1$ $byte)$,0.0012179647760059995,blue
+281,fourier.value.4byte.158,$Fourier$ $raw$ $value$ $158$ $(4$ $bytes)$,0.0012151813963598062,blue
+282,fourier.value.1byte.108,$Fourier$ $raw$ $value$ $108$ $(1$ $byte)$,0.0012141796632078353,blue
+283,fourier.value.1byte.180,$Fourier$ $raw$ $value$ $180$ $(1$ $byte)$,0.0012141377046922563,blue
+284,fourier.value.4byte.131,$Fourier$ $raw$ $value$ $131$ $(4$ $bytes)$,0.0012131841242042434,blue
+285,fourier.value.1byte.48,$Fourier$ $raw$ $value$ $48$ $(1$ $byte)$,0.001213132531053162,blue
+286,fourier.value.4byte.122,$Fourier$ $raw$ $value$ $122$ $(4$ $bytes)$,0.001212899680307592,blue
+287,fourier.value.1byte.184,$Fourier$ $raw$ $value$ $184$ $(1$ $byte)$,0.0012128273043825613,blue
+288,fourier.value.1byte.90,$Fourier$ $raw$ $value$ $90$ $(1$ $byte)$,0.0012127564634220004,blue
+289,fourier.value.4byte.119,$Fourier$ $raw$ $value$ $119$ $(4$ $bytes)$,0.001212557248391971,blue
+290,fourier.value.4byte.134,$Fourier$ $raw$ $value$ $134$ $(4$ $bytes)$,0.0012121635565918074,blue
+291,fourier.value.1byte.81,$Fourier$ $raw$ $value$ $81$ $(1$ $byte)$,0.0012112821246736574,blue
+292,fourier.value.4byte.31,$Fourier$ $raw$ $value$ $31$ $(4$ $bytes)$,0.001210827729624437,blue
+293,fourier.value.4byte.242,$Fourier$ $raw$ $value$ $242$ $(4$ $bytes)$,0.0012093556733746259,blue
+294,fourier.value.1byte.71,$Fourier$ $raw$ $value$ $71$ $(1$ $byte)$,0.0012089416134484583,blue
+295,fourier.value.1byte.226,$Fourier$ $raw$ $value$ $226$ $(1$ $byte)$,0.0012082998120018936,blue
+296,fourier.value.1byte.86,$Fourier$ $raw$ $value$ $86$ $(1$ $byte)$,0.0012081025006249878,blue
+297,fourier.value.4byte.22,$Fourier$ $raw$ $value$ $22$ $(4$ $bytes)$,0.0012077432502141671,blue
+298,fourier.value.1byte.165,$Fourier$ $raw$ $value$ $165$ $(1$ $byte)$,0.00120634029069958,blue
+299,fourier.value.4byte.69,$Fourier$ $raw$ $value$ $69$ $(4$ $bytes)$,0.0012058156400789853,blue
+300,fourier.value.1byte.200,$Fourier$ $raw$ $value$ $200$ $(1$ $byte)$,0.001205211629134139,blue
+301,fourier.value.4byte.121,$Fourier$ $raw$ $value$ $121$ $(4$ $bytes)$,0.0012046481388760684,blue
+302,fourier.value.1byte.179,$Fourier$ $raw$ $value$ $179$ $(1$ $byte)$,0.0012042578280392186,blue
+303,fourier.value.1byte.77,$Fourier$ $raw$ $value$ $77$ $(1$ $byte)$,0.0012036939842021432,blue
+304,fourier.value.1byte.157,$Fourier$ $raw$ $value$ $157$ $(1$ $byte)$,0.001202252798196872,blue
+305,fourier.value.4byte.9,$Fourier$ $raw$ $value$ $9$ $(4$ $bytes)$,0.001202213245751278,blue
+306,fourier.value.4byte.0,$Fourier$ $raw$ $value$ $0$ $(4$ $bytes)$,0.001202105182284621,blue
+307,fourier.value.1byte.83,$Fourier$ $raw$ $value$ $83$ $(1$ $byte)$,0.0012013401961352475,blue
+308,fourier.value.1byte.75,$Fourier$ $raw$ $value$ $75$ $(1$ $byte)$,0.001201032895375992,blue
+309,fourier.value.1byte.98,$Fourier$ $raw$ $value$ $98$ $(1$ $byte)$,0.0012008584017735651,blue
+310,fourier.value.4byte.19,$Fourier$ $raw$ $value$ $19$ $(4$ $bytes)$,0.0012006853454901015,blue
+311,fourier.value.4byte.105,$Fourier$ $raw$ $value$ $105$ $(4$ $bytes)$,0.0012003050075965302,blue
+312,fourier.value.1byte.79,$Fourier$ $raw$ $value$ $79$ $(1$ $byte)$,0.0011998921140038274,blue
+313,fourier.value.1byte.36,$Fourier$ $raw$ $value$ $36$ $(1$ $byte)$,0.0011998412102123485,blue
+314,fourier.value.4byte.218,$Fourier$ $raw$ $value$ $218$ $(4$ $bytes)$,0.0011997904542749335,blue
+315,fourier.value.1byte.1,$Fourier$ $raw$ $value$ $1$ $(1$ $byte)$,0.0011993923381281855,blue
+316,fourier.value.1byte.203,$Fourier$ $raw$ $value$ $203$ $(1$ $byte)$,0.001197896411756141,blue
+317,fourier.value.1byte.52,$Fourier$ $raw$ $value$ $52$ $(1$ $byte)$,0.0011976686541405135,blue
+318,fourier.value.1byte.23,$Fourier$ $raw$ $value$ $23$ $(1$ $byte)$,0.00119749590798799,blue
+319,fourier.value.1byte.250,$Fourier$ $raw$ $value$ $250$ $(1$ $byte)$,0.0011968317010133496,blue
+320,fourier.value.1byte.5,$Fourier$ $raw$ $value$ $5$ $(1$ $byte)$,0.0011955384157140364,blue
+321,fourier.value.4byte.236,$Fourier$ $raw$ $value$ $236$ $(4$ $bytes)$,0.0011952286045833172,blue
+322,fourier.value.4byte.24,$Fourier$ $raw$ $value$ $24$ $(4$ $bytes)$,0.001194714898351908,blue
+323,fourier.value.4byte.47,$Fourier$ $raw$ $value$ $47$ $(4$ $bytes)$,0.0011946873928871575,blue
+324,fourier.value.4byte.220,$Fourier$ $raw$ $value$ $220$ $(4$ $bytes)$,0.0011922363232023533,blue
+325,fourier.value.4byte.102,$Fourier$ $raw$ $value$ $102$ $(4$ $bytes)$,0.0011918980791816277,blue
+326,fourier.value.1byte.225,$Fourier$ $raw$ $value$ $225$ $(1$ $byte)$,0.0011904536232180223,blue
+327,fourier.value.1byte.74,$Fourier$ $raw$ $value$ $74$ $(1$ $byte)$,0.0011894047695185132,blue
+328,fourier.value.1byte.215,$Fourier$ $raw$ $value$ $215$ $(1$ $byte)$,0.001189127499404533,blue
+329,fourier.value.1byte.85,$Fourier$ $raw$ $value$ $85$ $(1$ $byte)$,0.0011886379917006524,blue
+330,fourier.value.1byte.115,$Fourier$ $raw$ $value$ $115$ $(1$ $byte)$,0.0011883847236950856,blue
+331,fourier.value.4byte.14,$Fourier$ $raw$ $value$ $14$ $(4$ $bytes)$,0.001186742606957207,blue
+332,fourier.value.1byte.54,$Fourier$ $raw$ $value$ $54$ $(1$ $byte)$,0.0011866811417611896,blue
+333,fourier.value.1byte.246,$Fourier$ $raw$ $value$ $246$ $(1$ $byte)$,0.00118649636009212,blue
+334,fourier.value.1byte.239,$Fourier$ $raw$ $value$ $239$ $(1$ $byte)$,0.0011862014707593432,blue
+335,fourier.value.1byte.170,$Fourier$ $raw$ $value$ $170$ $(1$ $byte)$,0.001185315134994336,blue
+336,fourier.value.1byte.139,$Fourier$ $raw$ $value$ $139$ $(1$ $byte)$,0.0011846555265930554,blue
+337,fourier.value.1byte.230,$Fourier$ $raw$ $value$ $230$ $(1$ $byte)$,0.0011826961504169153,blue
+338,fourier.value.1byte.183,$Fourier$ $raw$ $value$ $183$ $(1$ $byte)$,0.0011825348630860894,blue
+339,fourier.value.4byte.98,$Fourier$ $raw$ $value$ $98$ $(4$ $bytes)$,0.0011820323611302361,blue
+340,fourier.value.1byte.106,$Fourier$ $raw$ $value$ $106$ $(1$ $byte)$,0.0011819024555914976,blue
+341,fourier.value.1byte.166,$Fourier$ $raw$ $value$ $166$ $(1$ $byte)$,0.0011817942456337591,blue
+342,fourier.value.4byte.148,$Fourier$ $raw$ $value$ $148$ $(4$ $bytes)$,0.0011814199558456832,blue
+343,fourier.value.4byte.232,$Fourier$ $raw$ $value$ $232$ $(4$ $bytes)$,0.001181117649929597,blue
+344,fourier.value.1byte.220,$Fourier$ $raw$ $value$ $220$ $(1$ $byte)$,0.0011809305060779033,blue
+345,fourier.value.4byte.183,$Fourier$ $raw$ $value$ $183$ $(4$ $bytes)$,0.0011793041611989376,blue
+346,fourier.value.4byte.111,$Fourier$ $raw$ $value$ $111$ $(4$ $bytes)$,0.0011790276518385536,blue
+347,fourier.value.1byte.58,$Fourier$ $raw$ $value$ $58$ $(1$ $byte)$,0.0011790189388512682,blue
+348,fourier.value.1byte.229,$Fourier$ $raw$ $value$ $229$ $(1$ $byte)$,0.001178743570646447,blue
+349,fourier.value.1byte.144,$Fourier$ $raw$ $value$ $144$ $(1$ $byte)$,0.0011779631964392485,blue
+350,fourier.value.1byte.15,$Fourier$ $raw$ $value$ $15$ $(1$ $byte)$,0.0011776287153015886,blue
+351,fourier.value.1byte.196,$Fourier$ $raw$ $value$ $196$ $(1$ $byte)$,0.0011768444140571885,blue
+352,fourier.value.4byte.237,$Fourier$ $raw$ $value$ $237$ $(4$ $bytes)$,0.0011764088542586685,blue
+353,fourier.value.1byte.105,$Fourier$ $raw$ $value$ $105$ $(1$ $byte)$,0.0011757555129822794,blue
+354,fourier.value.1byte.153,$Fourier$ $raw$ $value$ $153$ $(1$ $byte)$,0.0011727284185215237,blue
+355,fourier.value.4byte.115,$Fourier$ $raw$ $value$ $115$ $(4$ $bytes)$,0.0011722377860372113,blue
+356,fourier.value.1byte.22,$Fourier$ $raw$ $value$ $22$ $(1$ $byte)$,0.001172167514757216,blue
+357,fourier.value.4byte.113,$Fourier$ $raw$ $value$ $113$ $(4$ $bytes)$,0.001170594900888641,blue
+358,fourier.value.1byte.55,$Fourier$ $raw$ $value$ $55$ $(1$ $byte)$,0.00117038949463049,blue
+359,fourier.value.4byte.15,$Fourier$ $raw$ $value$ $15$ $(4$ $bytes)$,0.0011702690898186022,blue
+360,fourier.value.4byte.25,$Fourier$ $raw$ $value$ $25$ $(4$ $bytes)$,0.0011702405905596148,blue
+361,fourier.value.1byte.37,$Fourier$ $raw$ $value$ $37$ $(1$ $byte)$,0.0011698886897001746,blue
+362,fourier.value.1byte.82,$Fourier$ $raw$ $value$ $82$ $(1$ $byte)$,0.0011692272797672561,blue
+363,fourier.value.1byte.63,$Fourier$ $raw$ $value$ $63$ $(1$ $byte)$,0.0011690572868832021,blue
+364,fourier.value.1byte.111,$Fourier$ $raw$ $value$ $111$ $(1$ $byte)$,0.0011678565652616186,blue
+365,fourier.value.4byte.93,$Fourier$ $raw$ $value$ $93$ $(4$ $bytes)$,0.0011669741235382856,blue
+366,fourier.value.4byte.117,$Fourier$ $raw$ $value$ $117$ $(4$ $bytes)$,0.001166939642818649,blue
+367,advanced.moment_full.15,$15^{th}$ ${moment}$,0.0011665640109488613,red
+368,fourier.value.1byte.32,$Fourier$ $raw$ $value$ $32$ $(1$ $byte)$,0.0011661405005080833,blue
+369,fourier.value.4byte.146,$Fourier$ $raw$ $value$ $146$ $(4$ $bytes)$,0.0011659709582251202,blue
+370,fourier.value.4byte.37,$Fourier$ $raw$ $value$ $37$ $(4$ $bytes)$,0.001163897523286586,blue
+371,fourier.value.4byte.17,$Fourier$ $raw$ $value$ $17$ $(4$ $bytes)$,0.0011634311943809039,blue
+372,fourier.value.4byte.153,$Fourier$ $raw$ $value$ $153$ $(4$ $bytes)$,0.0011633619091274143,blue
+373,fourier.value.4byte.27,$Fourier$ $raw$ $value$ $27$ $(4$ $bytes)$,0.0011632572486871171,blue
+374,fourier.value.4byte.63,$Fourier$ $raw$ $value$ $63$ $(4$ $bytes)$,0.0011630545704329248,blue
+375,fourier.value.1byte.31,$Fourier$ $raw$ $value$ $31$ $(1$ $byte)$,0.001163023379127843,blue
+376,fourier.value.4byte.227,$Fourier$ $raw$ $value$ $227$ $(4$ $bytes)$,0.0011628734121963817,blue
+377,fourier.value.1byte.21,$Fourier$ $raw$ $value$ $21$ $(1$ $byte)$,0.0011626047901556625,blue
+378,fourier.value.1byte.176,$Fourier$ $raw$ $value$ $176$ $(1$ $byte)$,0.0011625863385577532,blue
+379,fourier.value.1byte.232,$Fourier$ $raw$ $value$ $232$ $(1$ $byte)$,0.0011622373565238597,blue
+380,fourier.value.1byte.169,$Fourier$ $raw$ $value$ $169$ $(1$ $byte)$,0.0011614717565899216,blue
+381,fourier.value.4byte.85,$Fourier$ $raw$ $value$ $85$ $(4$ $bytes)$,0.0011608946825436349,blue
+382,fourier.value.4byte.161,$Fourier$ $raw$ $value$ $161$ $(4$ $bytes)$,0.001159589276756961,blue
+383,fourier.value.4byte.28,$Fourier$ $raw$ $value$ $28$ $(4$ $bytes)$,0.0011593296864645035,blue
+384,fourier.value.1byte.29,$Fourier$ $raw$ $value$ $29$ $(1$ $byte)$,0.0011589871764382557,blue
+385,fourier.value.4byte.191,$Fourier$ $raw$ $value$ $191$ $(4$ $bytes)$,0.0011588621907406666,blue
+386,fourier.value.4byte.145,$Fourier$ $raw$ $value$ $145$ $(4$ $bytes)$,0.0011583229046763178,blue
+387,fourier.value.4byte.197,$Fourier$ $raw$ $value$ $197$ $(4$ $bytes)$,0.0011579234863845966,blue
+388,fourier.value.4byte.86,$Fourier$ $raw$ $value$ $86$ $(4$ $bytes)$,0.0011571217821840004,blue
+389,fourier.value.4byte.162,$Fourier$ $raw$ $value$ $162$ $(4$ $bytes)$,0.0011569694817525303,blue
+390,fourier.value.1byte.0,$Fourier$ $raw$ $value$ $0$ $(1$ $byte)$,0.0011569163736630387,blue
+391,fourier.value.1byte.136,$Fourier$ $raw$ $value$ $136$ $(1$ $byte)$,0.0011562421221089718,blue
+392,fourier.value.4byte.90,$Fourier$ $raw$ $value$ $90$ $(4$ $bytes)$,0.0011560337622437671,blue
+393,fourier.value.4byte.44,$Fourier$ $raw$ $value$ $44$ $(4$ $bytes)$,0.0011559383675065456,blue
+394,fourier.value.1byte.192,$Fourier$ $raw$ $value$ $192$ $(1$ $byte)$,0.0011553528018339405,blue
+395,fourier.value.4byte.221,$Fourier$ $raw$ $value$ $221$ $(4$ $bytes)$,0.0011537886289881315,blue
+396,fourier.value.4byte.12,$Fourier$ $raw$ $value$ $12$ $(4$ $bytes)$,0.0011533775385051128,blue
+397,fourier.value.4byte.241,$Fourier$ $raw$ $value$ $241$ $(4$ $bytes)$,0.0011524535619357452,blue
+398,fourier.value.4byte.208,$Fourier$ $raw$ $value$ $208$ $(4$ $bytes)$,0.0011521377796378292,blue
+399,fourier.value.4byte.75,$Fourier$ $raw$ $value$ $75$ $(4$ $bytes)$,0.0011518976217020185,blue
+400,fourier.value.4byte.202,$Fourier$ $raw$ $value$ $202$ $(4$ $bytes)$,0.0011507311129034046,blue
+401,fourier.value.4byte.173,$Fourier$ $raw$ $value$ $173$ $(4$ $bytes)$,0.0011505220391797365,blue
+402,fourier.value.4byte.70,$Fourier$ $raw$ $value$ $70$ $(4$ $bytes)$,0.0011501578650058514,blue
+403,fourier.value.4byte.56,$Fourier$ $raw$ $value$ $56$ $(4$ $bytes)$,0.0011491643385446964,blue
+404,fourier.value.1byte.68,$Fourier$ $raw$ $value$ $68$ $(1$ $byte)$,0.0011491170931575117,blue
+405,fourier.value.4byte.211,$Fourier$ $raw$ $value$ $211$ $(4$ $bytes)$,0.001149099506133067,blue
+406,fourier.value.1byte.94,$Fourier$ $raw$ $value$ $94$ $(1$ $byte)$,0.001149098350555012,blue
+407,fourier.value.4byte.167,$Fourier$ $raw$ $value$ $167$ $(4$ $bytes)$,0.0011482055406411133,blue
+408,fourier.value.4byte.101,$Fourier$ $raw$ $value$ $101$ $(4$ $bytes)$,0.0011477643222535133,blue
+409,fourier.value.1byte.233,$Fourier$ $raw$ $value$ $233$ $(1$ $byte)$,0.00114764428940731,blue
+410,fourier.value.4byte.82,$Fourier$ $raw$ $value$ $82$ $(4$ $bytes)$,0.001147491772948721,blue
+411,fourier.value.4byte.68,$Fourier$ $raw$ $value$ $68$ $(4$ $bytes)$,0.0011474444902760512,blue
+412,fourier.value.4byte.16,$Fourier$ $raw$ $value$ $16$ $(4$ $bytes)$,0.0011471695663477063,blue
+413,fourier.value.4byte.116,$Fourier$ $raw$ $value$ $116$ $(4$ $bytes)$,0.001147139609082272,blue
+414,fourier.value.4byte.100,$Fourier$ $raw$ $value$ $100$ $(4$ $bytes)$,0.0011470130303586174,blue
+415,fourier.value.4byte.80,$Fourier$ $raw$ $value$ $80$ $(4$ $bytes)$,0.0011462688293296958,blue
+416,fourier.value.4byte.35,$Fourier$ $raw$ $value$ $35$ $(4$ $bytes)$,0.0011462640645746737,blue
+417,fourier.value.4byte.226,$Fourier$ $raw$ $value$ $226$ $(4$ $bytes)$,0.0011456176753274867,blue
+418,fourier.value.4byte.60,$Fourier$ $raw$ $value$ $60$ $(4$ $bytes)$,0.0011453519184548534,blue
+419,fourier.value.4byte.207,$Fourier$ $raw$ $value$ $207$ $(4$ $bytes)$,0.0011448904869449058,blue
+420,fourier.value.4byte.58,$Fourier$ $raw$ $value$ $58$ $(4$ $bytes)$,0.0011443469057483423,blue
+421,fourier.value.4byte.136,$Fourier$ $raw$ $value$ $136$ $(4$ $bytes)$,0.0011435065934989174,blue
+422,fourier.value.1byte.18,$Fourier$ $raw$ $value$ $18$ $(1$ $byte)$,0.0011432979619953954,blue
+423,fourier.value.4byte.192,$Fourier$ $raw$ $value$ $192$ $(4$ $bytes)$,0.001142813511468052,blue
+424,fourier.value.4byte.188,$Fourier$ $raw$ $value$ $188$ $(4$ $bytes)$,0.0011426595171260886,blue
+425,fourier.value.4byte.57,$Fourier$ $raw$ $value$ $57$ $(4$ $bytes)$,0.0011425654765095982,blue
+426,fourier.value.4byte.240,$Fourier$ $raw$ $value$ $240$ $(4$ $bytes)$,0.0011422833662635727,blue
+427,fourier.value.4byte.168,$Fourier$ $raw$ $value$ $168$ $(4$ $bytes)$,0.0011422208754270865,blue
+428,fourier.value.4byte.23,$Fourier$ $raw$ $value$ $23$ $(4$ $bytes)$,0.0011419172797627712,blue
+429,fourier.value.4byte.190,$Fourier$ $raw$ $value$ $190$ $(4$ $bytes)$,0.0011418848234634378,blue
+430,fourier.value.4byte.204,$Fourier$ $raw$ $value$ $204$ $(4$ $bytes)$,0.001141879790968483,blue
+431,fourier.value.4byte.224,$Fourier$ $raw$ $value$ $224$ $(4$ $bytes)$,0.0011418382495320249,blue
+432,fourier.value.1byte.143,$Fourier$ $raw$ $value$ $143$ $(1$ $byte)$,0.001141816414344748,blue
+433,fourier.value.4byte.213,$Fourier$ $raw$ $value$ $213$ $(4$ $bytes)$,0.0011413482701834131,blue
+434,fourier.value.4byte.171,$Fourier$ $raw$ $value$ $171$ $(4$ $bytes)$,0.0011410661093062262,blue
+435,fourier.value.4byte.13,$Fourier$ $raw$ $value$ $13$ $(4$ $bytes)$,0.0011409836574444406,blue
+436,fourier.value.4byte.84,$Fourier$ $raw$ $value$ $84$ $(4$ $bytes)$,0.0011409144466211036,blue
+437,fourier.value.4byte.149,$Fourier$ $raw$ $value$ $149$ $(4$ $bytes)$,0.0011407812994976207,blue
+438,fourier.value.4byte.151,$Fourier$ $raw$ $value$ $151$ $(4$ $bytes)$,0.001140575184595571,blue
+439,fourier.value.4byte.45,$Fourier$ $raw$ $value$ $45$ $(4$ $bytes)$,0.001140552324972667,blue
+440,fourier.value.4byte.26,$Fourier$ $raw$ $value$ $26$ $(4$ $bytes)$,0.0011404345264743342,blue
+441,fourier.value.4byte.135,$Fourier$ $raw$ $value$ $135$ $(4$ $bytes)$,0.0011403119613081377,blue
+442,fourier.value.4byte.83,$Fourier$ $raw$ $value$ $83$ $(4$ $bytes)$,0.001140179004312207,blue
+443,fourier.value.4byte.40,$Fourier$ $raw$ $value$ $40$ $(4$ $bytes)$,0.0011401419597861142,blue
+444,fourier.value.4byte.88,$Fourier$ $raw$ $value$ $88$ $(4$ $bytes)$,0.001139125584638081,blue
+445,fourier.value.1byte.173,$Fourier$ $raw$ $value$ $173$ $(1$ $byte)$,0.0011388050862917024,blue
+446,fourier.value.4byte.55,$Fourier$ $raw$ $value$ $55$ $(4$ $bytes)$,0.0011384060264655234,blue
+447,fourier.value.4byte.74,$Fourier$ $raw$ $value$ $74$ $(4$ $bytes)$,0.0011379062880886514,blue
+448,fourier.value.4byte.234,$Fourier$ $raw$ $value$ $234$ $(4$ $bytes)$,0.001137169261009911,blue
+449,fourier.value.4byte.244,$Fourier$ $raw$ $value$ $244$ $(4$ $bytes)$,0.0011369645435239288,blue
+450,fourier.value.4byte.225,$Fourier$ $raw$ $value$ $225$ $(4$ $bytes)$,0.0011368267099720955,blue
+451,fourier.value.4byte.235,$Fourier$ $raw$ $value$ $235$ $(4$ $bytes)$,0.0011366389858242854,blue
+452,fourier.value.4byte.150,$Fourier$ $raw$ $value$ $150$ $(4$ $bytes)$,0.0011365445845562838,blue
+453,fourier.value.4byte.228,$Fourier$ $raw$ $value$ $228$ $(4$ $bytes)$,0.0011360684682422508,blue
+454,fourier.value.4byte.138,$Fourier$ $raw$ $value$ $138$ $(4$ $bytes)$,0.0011356629264385513,blue
+455,fourier.value.4byte.181,$Fourier$ $raw$ $value$ $181$ $(4$ $bytes)$,0.001135617299900665,blue
+456,fourier.value.4byte.39,$Fourier$ $raw$ $value$ $39$ $(4$ $bytes)$,0.0011354300674949278,blue
+457,fourier.value.4byte.223,$Fourier$ $raw$ $value$ $223$ $(4$ $bytes)$,0.0011351281871775803,blue
+458,fourier.value.4byte.189,$Fourier$ $raw$ $value$ $189$ $(4$ $bytes)$,0.001134988273759096,blue
+459,fourier.value.4byte.30,$Fourier$ $raw$ $value$ $30$ $(4$ $bytes)$,0.0011348324968968532,blue
+460,fourier.value.4byte.210,$Fourier$ $raw$ $value$ $210$ $(4$ $bytes)$,0.0011345953011593637,blue
+461,fourier.value.4byte.137,$Fourier$ $raw$ $value$ $137$ $(4$ $bytes)$,0.0011344582071319389,blue
+462,fourier.value.4byte.77,$Fourier$ $raw$ $value$ $77$ $(4$ $bytes)$,0.001134366605733167,blue
+463,fourier.value.4byte.206,$Fourier$ $raw$ $value$ $206$ $(4$ $bytes)$,0.001133907793080463,blue
+464,fourier.value.4byte.159,$Fourier$ $raw$ $value$ $159$ $(4$ $bytes)$,0.0011338219269898578,blue
+465,fourier.value.4byte.187,$Fourier$ $raw$ $value$ $187$ $(4$ $bytes)$,0.0011335647210832488,blue
+466,fourier.value.4byte.141,$Fourier$ $raw$ $value$ $141$ $(4$ $bytes)$,0.00113351580528272,blue
+467,fourier.value.4byte.106,$Fourier$ $raw$ $value$ $106$ $(4$ $bytes)$,0.0011333298918131864,blue
+468,fourier.value.4byte.48,$Fourier$ $raw$ $value$ $48$ $(4$ $bytes)$,0.0011329452445656223,blue
+469,fourier.value.4byte.49,$Fourier$ $raw$ $value$ $49$ $(4$ $bytes)$,0.001132903394914259,blue
+470,fourier.value.4byte.114,$Fourier$ $raw$ $value$ $114$ $(4$ $bytes)$,0.0011328988797804028,blue
+471,fourier.value.4byte.81,$Fourier$ $raw$ $value$ $81$ $(4$ $bytes)$,0.0011327504653397664,blue
+472,fourier.value.4byte.38,$Fourier$ $raw$ $value$ $38$ $(4$ $bytes)$,0.0011327293480547106,blue
+473,fourier.value.4byte.71,$Fourier$ $raw$ $value$ $71$ $(4$ $bytes)$,0.001132716142323708,blue
+474,fourier.value.4byte.163,$Fourier$ $raw$ $value$ $163$ $(4$ $bytes)$,0.0011326850721248122,blue
+475,fourier.value.4byte.73,$Fourier$ $raw$ $value$ $73$ $(4$ $bytes)$,0.0011326444950107662,blue
+476,fourier.value.4byte.178,$Fourier$ $raw$ $value$ $178$ $(4$ $bytes)$,0.0011326210743411805,blue
+477,fourier.value.4byte.36,$Fourier$ $raw$ $value$ $36$ $(4$ $bytes)$,0.0011319625602678697,blue
+478,fourier.value.4byte.87,$Fourier$ $raw$ $value$ $87$ $(4$ $bytes)$,0.0011318883967360595,blue
+479,fourier.value.4byte.185,$Fourier$ $raw$ $value$ $185$ $(4$ $bytes)$,0.0011316518808474492,blue
+480,fourier.value.4byte.214,$Fourier$ $raw$ $value$ $214$ $(4$ $bytes)$,0.0011314919411297831,blue
+481,fourier.value.4byte.42,$Fourier$ $raw$ $value$ $42$ $(4$ $bytes)$,0.0011311669930871215,blue
+482,fourier.value.4byte.177,$Fourier$ $raw$ $value$ $177$ $(4$ $bytes)$,0.001131053264434068,blue
+483,fourier.value.4byte.52,$Fourier$ $raw$ $value$ $52$ $(4$ $bytes)$,0.0011308682588206738,blue
+484,fourier.value.4byte.79,$Fourier$ $raw$ $value$ $79$ $(4$ $bytes)$,0.0011307877610014067,blue
+485,fourier.value.4byte.179,$Fourier$ $raw$ $value$ $179$ $(4$ $bytes)$,0.0011304951036941618,blue
+486,fourier.value.4byte.29,$Fourier$ $raw$ $value$ $29$ $(4$ $bytes)$,0.0011302478324013688,blue
+487,fourier.value.1byte.140,$Fourier$ $raw$ $value$ $140$ $(1$ $byte)$,0.0011301811041145083,blue
+488,fourier.value.4byte.164,$Fourier$ $raw$ $value$ $164$ $(4$ $bytes)$,0.001130078149035245,blue
+489,fourier.value.4byte.176,$Fourier$ $raw$ $value$ $176$ $(4$ $bytes)$,0.0011298355869676286,blue
+490,fourier.value.4byte.215,$Fourier$ $raw$ $value$ $215$ $(4$ $bytes)$,0.001129789284150358,blue
+491,fourier.value.4byte.166,$Fourier$ $raw$ $value$ $166$ $(4$ $bytes)$,0.0011291037088624648,blue
+492,fourier.value.4byte.172,$Fourier$ $raw$ $value$ $172$ $(4$ $bytes)$,0.0011286101028494596,blue
+493,fourier.value.4byte.169,$Fourier$ $raw$ $value$ $169$ $(4$ $bytes)$,0.001128490057033343,blue
+494,fourier.value.4byte.65,$Fourier$ $raw$ $value$ $65$ $(4$ $bytes)$,0.001128391152810787,blue
+495,fourier.value.4byte.51,$Fourier$ $raw$ $value$ $51$ $(4$ $bytes)$,0.0011282879248730694,blue
+496,fourier.value.4byte.231,$Fourier$ $raw$ $value$ $231$ $(4$ $bytes)$,0.0011280736502969374,blue
+497,fourier.value.4byte.201,$Fourier$ $raw$ $value$ $201$ $(4$ $bytes)$,0.0011278969273637559,blue
+498,fourier.value.4byte.7,$Fourier$ $raw$ $value$ $7$ $(4$ $bytes)$,0.001127542394352528,blue
+499,fourier.value.4byte.46,$Fourier$ $raw$ $value$ $46$ $(4$ $bytes)$,0.0011274657784683011,blue
+500,fourier.value.4byte.59,$Fourier$ $raw$ $value$ $59$ $(4$ $bytes)$,0.0011265475373500844,blue
+501,fourier.value.4byte.61,$Fourier$ $raw$ $value$ $61$ $(4$ $bytes)$,0.0011264102349150304,blue
+502,fourier.value.4byte.200,$Fourier$ $raw$ $value$ $200$ $(4$ $bytes)$,0.0011264063589638245,blue
+503,fourier.value.4byte.20,$Fourier$ $raw$ $value$ $20$ $(4$ $bytes)$,0.0011262885286889889,blue
+504,fourier.value.4byte.53,$Fourier$ $raw$ $value$ $53$ $(4$ $bytes)$,0.001125166429578499,blue
+505,fourier.value.4byte.174,$Fourier$ $raw$ $value$ $174$ $(4$ $bytes)$,0.0011251378941137167,blue
+506,fourier.value.4byte.11,$Fourier$ $raw$ $value$ $11$ $(4$ $bytes)$,0.0011249199677567181,blue
+507,fourier.value.4byte.170,$Fourier$ $raw$ $value$ $170$ $(4$ $bytes)$,0.0011246147515474759,blue
+508,fourier.value.4byte.186,$Fourier$ $raw$ $value$ $186$ $(4$ $bytes)$,0.0011245646187262707,blue
+509,fourier.value.4byte.205,$Fourier$ $raw$ $value$ $205$ $(4$ $bytes)$,0.0011243981859787452,blue
+510,fourier.value.4byte.196,$Fourier$ $raw$ $value$ $196$ $(4$ $bytes)$,0.001124165620860582,blue
+511,fourier.value.4byte.89,$Fourier$ $raw$ $value$ $89$ $(4$ $bytes)$,0.0011237544297836922,blue
+512,fourier.value.4byte.104,$Fourier$ $raw$ $value$ $104$ $(4$ $bytes)$,0.001123628007333566,blue
+513,fourier.value.4byte.110,$Fourier$ $raw$ $value$ $110$ $(4$ $bytes)$,0.0011234796542732633,blue
+514,fourier.value.4byte.239,$Fourier$ $raw$ $value$ $239$ $(4$ $bytes)$,0.001123393562991057,blue
+515,fourier.value.4byte.147,$Fourier$ $raw$ $value$ $147$ $(4$ $bytes)$,0.0011230018280345253,blue
+516,fourier.value.4byte.34,$Fourier$ $raw$ $value$ $34$ $(4$ $bytes)$,0.0011228227492539205,blue
+517,fourier.value.4byte.78,$Fourier$ $raw$ $value$ $78$ $(4$ $bytes)$,0.0011220149308485017,blue
+518,fourier.value.4byte.199,$Fourier$ $raw$ $value$ $199$ $(4$ $bytes)$,0.0011213111407346605,blue
+519,fourier.value.4byte.209,$Fourier$ $raw$ $value$ $209$ $(4$ $bytes)$,0.001121238919742239,blue
+520,fourier.value.4byte.193,$Fourier$ $raw$ $value$ $193$ $(4$ $bytes)$,0.001121206213304072,blue
+521,fourier.value.4byte.92,$Fourier$ $raw$ $value$ $92$ $(4$ $bytes)$,0.0011209894681171923,blue
+522,fourier.value.4byte.217,$Fourier$ $raw$ $value$ $217$ $(4$ $bytes)$,0.0011207925468121021,blue
+523,fourier.value.4byte.94,$Fourier$ $raw$ $value$ $94$ $(4$ $bytes)$,0.0011198662671278712,blue
+524,fourier.value.4byte.10,$Fourier$ $raw$ $value$ $10$ $(4$ $bytes)$,0.0011188899636230736,blue
+525,fourier.value.4byte.62,$Fourier$ $raw$ $value$ $62$ $(4$ $bytes)$,0.0011188279760884017,blue
+526,fourier.value.4byte.64,$Fourier$ $raw$ $value$ $64$ $(4$ $bytes)$,0.0011186921218908192,blue
+527,fourier.value.4byte.41,$Fourier$ $raw$ $value$ $41$ $(4$ $bytes)$,0.0011184852934847521,blue
+528,fourier.value.4byte.152,$Fourier$ $raw$ $value$ $152$ $(4$ $bytes)$,0.0011178692079234368,blue
+529,fourier.value.4byte.198,$Fourier$ $raw$ $value$ $198$ $(4$ $bytes)$,0.001117544804996185,blue
+530,fourier.value.4byte.67,$Fourier$ $raw$ $value$ $67$ $(4$ $bytes)$,0.0011174502437723804,blue
+531,fourier.value.4byte.216,$Fourier$ $raw$ $value$ $216$ $(4$ $bytes)$,0.001117266679378316,blue
+532,fourier.value.4byte.165,$Fourier$ $raw$ $value$ $165$ $(4$ $bytes)$,0.0011169827597204667,blue
+533,fourier.value.4byte.43,$Fourier$ $raw$ $value$ $43$ $(4$ $bytes)$,0.001116441632134442,blue
+534,fourier.value.4byte.103,$Fourier$ $raw$ $value$ $103$ $(4$ $bytes)$,0.0011147692693471776,blue
+535,fourier.value.4byte.91,$Fourier$ $raw$ $value$ $91$ $(4$ $bytes)$,0.001114471313805122,blue
+536,fourier.value.4byte.184,$Fourier$ $raw$ $value$ $184$ $(4$ $bytes)$,0.0011144474897812747,blue
+537,fourier.value.4byte.212,$Fourier$ $raw$ $value$ $212$ $(4$ $bytes)$,0.0011142431576031376,blue
+538,fourier.value.4byte.238,$Fourier$ $raw$ $value$ $238$ $(4$ $bytes)$,0.001112617704131235,blue
+539,fourier.value.4byte.66,$Fourier$ $raw$ $value$ $66$ $(4$ $bytes)$,0.0011123578734492045,blue
+540,fourier.value.4byte.76,$Fourier$ $raw$ $value$ $76$ $(4$ $bytes)$,0.0011119353735105516,blue
+541,fourier.value.4byte.175,$Fourier$ $raw$ $value$ $175$ $(4$ $bytes)$,0.0011104742111094233,blue
+542,fourier.value.4byte.203,$Fourier$ $raw$ $value$ $203$ $(4$ $bytes)$,0.0011100658804575883,blue
+543,fourier.value.4byte.50,$Fourier$ $raw$ $value$ $50$ $(4$ $bytes)$,0.0011098747652264081,blue
+544,fourier.value.4byte.194,$Fourier$ $raw$ $value$ $194$ $(4$ $bytes)$,0.0011077692599138639,blue
+545,fourier.value.4byte.99,$Fourier$ $raw$ $value$ $99$ $(4$ $bytes)$,0.001107153023235528,blue
+546,fourier.value.4byte.72,$Fourier$ $raw$ $value$ $72$ $(4$ $bytes)$,0.0011067044294714174,blue
+547,fourier.value.4byte.195,$Fourier$ $raw$ $value$ $195$ $(4$ $bytes)$,0.0011062869817982212,blue
+548,fourier.value.4byte.160,$Fourier$ $raw$ $value$ $160$ $(4$ $bytes)$,0.00110218600031372,blue
+549,fourier.value.4byte.180,$Fourier$ $raw$ $value$ $180$ $(4$ $bytes)$,0.0011018245055467687,blue
+550,fourier.value.4byte.54,$Fourier$ $raw$ $value$ $54$ $(4$ $bytes)$,0.001080694981069589,blue
+551,advanced.dit.renyi.full.0,$R\'enyi's$ $entropy$ $(\alpha = 0)$,0.0010213164013702224,red
+552,advanced.dit.tsallis.full.5,$Tsallis$ $entropy$ $(q = 5)$,0.0008845871509507512,red
+553,fourier.stat.4byte.moment.6,$Fourier$ $6^{th}$ ${moment}$ $(4$ $bytes)$,0.0008270259494817169,blue
+554,fourier.stat.4byte.moment.9,$Fourier$ $9^{th}$ ${moment}$ $(4$ $bytes)$,0.0006296823554383678,blue
+555,advanced.dit.tsallis.full.4,$Tsallis$ $entropy$ $(q = 4)$,0.0004951167200724398,red
+556,advanced.dit.tsallis.full.8,$Tsallis$ $entropy$ $(q = 8)$,0.0004249925570299835,red
+557,fourier.stat.4byte.moment.8,$Fourier$ $8^{th}$ ${moment}$ $(4$ $bytes)$,0.0003492298729823065,blue
+558,advanced.dit.tsallis.full.6,$Tsallis$ $entropy$ $(q = 6)$,0.0003212729268993254,red
+559,fourier.stat.4byte.moment.11,$Fourier$ $11^{th}$ ${moment}$ $(4$ $bytes)$,0.00028680767894655065,blue
+560,fourier.stat.1byte.moment.3,$Fourier$ $3^{rd}$ ${moment}$ $(1$ $byte)$,0.0002691685320091179,blue
+561,advanced.dit.tsallis.full.9,$Tsallis$ $entropy$ $(q = 9)$,0.00020960750336777872,red
+562,fourier.stat.4byte.moment.12,$Fourier$ $12^{th}$ ${moment}$ $(4$ $bytes)$,0.00020344377219815222,blue
+563,fourier.stat.1byte.moment.4,$Fourier$ $4^{th}$ ${moment}$ $(1$ $byte)$,0.00012141447970781782,blue
+564,fourier.stat.1byte.moment.5,$Fourier$ $5^{th}$ ${moment}$ $(1$ $byte)$,7.238930800381595e-05,blue
+565,fourier.stat.4byte.moment.15,$Fourier$ $15^{th}$ ${moment}$ $(4$ $bytes)$,4.086912612764233e-05,blue
+566,advanced.dit.tsallis.full.7,$Tsallis$ $entropy$ $(q = 7)$,2.9513502422396506e-05,red
+567,fourier.stat.4byte.moment.10,$Fourier$ $10^{th}$ ${moment}$ $(4$ $bytes)$,1.2339913857853852e-05,blue
+568,advanced.dit.tsallis.full.10,$Tsallis$ $entropy$ $(q = 10)$,8.416101793730694e-06,red
+569,fourier.stat.4byte.moment.13,$Fourier$ $13^{th}$ ${moment}$ $(4$ $bytes)$,8.276226815080842e-06,blue
+570,fourier.stat.4byte.moment.7,$Fourier$ $7^{th}$ ${moment}$ $(4$ $bytes)$,5.75478217284319e-06,blue
+571,fourier.stat.1byte.moment.6,$Fourier$ $6^{th}$ ${moment}$ $(1$ $byte)$,5.6465569843988035e-06,blue
+572,fourier.stat.4byte.moment.14,$Fourier$ $14^{th}$ ${moment}$ $(4$ $bytes)$,3.292306102271089e-06,blue
+573,fourier.stat.1byte.moment.7,$Fourier$ $7^{th}$ ${moment}$ $(1$ $byte)$,4.598980740389845e-07,blue
+574,fourier.stat.1byte.moment.8,$Fourier$ $8^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+575,fourier.stat.1byte.moment.10,$Fourier$ $10^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+576,fourier.stat.1byte.moment.12,$Fourier$ $12^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+577,fourier.stat.1byte.moment.15,$Fourier$ $15^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+578,fourier.stat.1byte.moment.11,$Fourier$ $11^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+579,fourier.stat.1byte.moment.9,$Fourier$ $9^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+580,fourier.stat.1byte.moment.14,$Fourier$ $14^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
+581,fourier.stat.1byte.moment.13,$Fourier$ $13^{th}$ ${moment}$ $(1$ $byte)$,0.0,blue
