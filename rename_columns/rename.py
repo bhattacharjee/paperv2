@@ -22,7 +22,7 @@ def get_stat_name(oldname: str) -> str:
         return "chi$-$squared"
     elif "moment" in oldname:
         moment_num = get_num_with_ordinal_indicator(oldname)
-        return moment_num + "$ ${moment}"
+        return moment_num + "$ ${central}$ ${moment}"
     elif "renyi" in oldname:
         number = get_value_number(oldname)
         return f"R\\'enyi's$ $entropy$ $(\\alpha = {number})"
