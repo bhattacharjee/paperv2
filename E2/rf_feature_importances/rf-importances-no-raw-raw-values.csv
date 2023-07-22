@@ -1,0 +1,81 @@
+,original_feature_name,features,importances,colors
+0,fourier.stat.1byte.std,$Fourier$ $standard$ $deviation$ $(1$ $byte)$,0.06368409632529679,blue
+1,fourier.stat.1byte.autocorr,$Fourier$ $auto$-$correlation$ $(1$ $byte)$,0.036922272781087465,blue
+2,fourier.stat.1byte.mean,$Fourier$ ${mean}$ $(1$ $byte)$,0.03664203134886115,blue
+3,baseline.autocorrelation_full,$auto$-$correlation$,0.036426453037663474,green
+4,advanced.dit.renyi.full.inf,$R\'enyi's$ $entropy$ $(\alpha = \infty)$,0.032269883994097213,red
+5,fourier.stat.4byte.mean,$Fourier$ ${mean}$ $(4$ $bytes)$,0.03194269674164797,blue
+6,baseline.montecarlo_pi,$Monte$-$Carlo$ $\pi$,0.0308360047736429,green
+7,fourier.stat.4byte.std,$Fourier$ $standard$ $deviation$ $(4$ $bytes)$,0.030367304729057337,blue
+8,fourier.stat.4byte.autocorr,$Fourier$ $auto$-$correlation$ $(4$ $bytes)$,0.029993871490381643,blue
+9,advanced.skew_full,$skewness$,0.029264349150725632,red
+10,advanced.kurtosis_full,$kurtosis$,0.028704823309944737,red
+11,baseline.shannon_entropy,$Shannon's$ $entropy$,0.027613601058993492,green
+12,advanced.moment_full.2,$2^{nd}$ ${central}$ ${moment}$,0.02681962511731796,red
+13,fourier.stat.4byte.chisq,$Fourier$ $chi$-$squared$ $(4$ $bytes)$,0.02671449717137672,blue
+14,advanced.dit.renyi.full.1,$R\'enyi's$ $entropy$ $(\alpha = 1)$,0.026598623145512156,red
+15,advanced.dit.tsallis.full.1,$Tsallis$ $entropy$ $(n = 1)$,0.026452946985864974,red
+16,baseline.chisquare_full,$chi$-$squared$,0.024525919213874682,green
+17,advanced.dit.renyi.full.10,$R\'enyi's$ $entropy$ $(\alpha = 10)$,0.022586871374402535,red
+18,advanced.moment_full.3,$3^{rd}$ ${central}$ ${moment}$,0.021959486604360555,red
+19,advanced.moment_full.4,$4^{th}$ ${central}$ ${moment}$,0.021204645085194006,red
+20,advanced.dit.renyi.full.9,$R\'enyi's$ $entropy$ $(\alpha = 9)$,0.021118718087125603,red
+21,advanced.dit.renyi.full.8,$R\'enyi's$ $entropy$ $(\alpha = 8)$,0.020155231677666027,red
+22,advanced.dit.renyi.full.7,$R\'enyi's$ $entropy$ $(\alpha = 7)$,0.019768157811963963,red
+23,advanced.dit.renyi.full.2,$R\'enyi's$ $entropy$ $(\alpha = 2)$,0.01935751666630301,red
+24,advanced.dit.renyi.full.4,$R\'enyi's$ $entropy$ $(\alpha = 4)$,0.019259241513796443,red
+25,fourier.stat.1byte.chisq,$Fourier$ $chi$-$squared$ $(1$ $byte)$,0.019142270306868703,blue
+26,advanced.dit.renyi.full.6,$R\'enyi's$ $entropy$ $(\alpha = 6)$,0.01873810455833951,red
+27,advanced.dit.renyi.full.3,$R\'enyi's$ $entropy$ $(\alpha = 3)$,0.01855433963513854,red
+28,advanced.dit.renyi.full.5,$R\'enyi's$ $entropy$ $(\alpha = 5)$,0.017394582971264366,red
+29,fourier.stat.1byte.moment.2,$Fourier$ $2^{nd}$ ${central}$ ${moment}$ $(1$ $byte)$,0.016936056394180887,blue
+30,advanced.dit.tsallis.full.2,$Tsallis$ $entropy$ $(n = 2)$,0.014234605415005552,red
+31,advanced.dit.extropy.full,$extropy$,0.014161140445211197,red
+32,fourier.stat.4byte.moment.2,$Fourier$ $2^{nd}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.01391619090136808,blue
+33,advanced.moment_full.6,$6^{th}$ ${central}$ ${moment}$,0.013601430297867511,red
+34,advanced.moment_full.5,$5^{th}$ ${central}$ ${moment}$,0.013562146661756534,red
+35,advanced.moment_full.10,$10^{th}$ ${central}$ ${moment}$,0.010511872278600181,red
+36,advanced.moment_full.8,$8^{th}$ ${central}$ ${moment}$,0.00959287758087658,red
+37,advanced.moment_full.7,$7^{th}$ ${central}$ ${moment}$,0.0095249584197784,red
+38,advanced.moment_full.12,$12^{th}$ ${central}$ ${moment}$,0.008867128176699626,red
+39,advanced.moment_full.9,$9^{th}$ ${central}$ ${moment}$,0.00879627964169201,red
+40,fourier.stat.4byte.moment.3,$Fourier$ $3^{rd}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.008323226708522386,blue
+41,advanced.moment_full.11,$11^{th}$ ${central}$ ${moment}$,0.008184083392673555,red
+42,fourier.stat.4byte.moment.4,$Fourier$ $4^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.007965319635362124,blue
+43,advanced.moment_full.13,$13^{th}$ ${central}$ ${moment}$,0.007178578223416054,red
+44,advanced.moment_full.14,$14^{th}$ ${central}$ ${moment}$,0.006678914518743179,red
+45,fourier.stat.4byte.moment.5,$Fourier$ $5^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.006476338729480333,blue
+46,advanced.dit.tsallis.full.3,$Tsallis$ $entropy$ $(n = 3)$,0.005364560444352901,red
+47,advanced.moment_full.15,$15^{th}$ ${central}$ ${moment}$,0.004731222789719595,red
+48,fourier.stat.1byte.moment.3,$Fourier$ $3^{rd}$ ${central}$ ${moment}$ $(1$ $byte)$,0.004184109894294414,blue
+49,advanced.dit.renyi.full.0,$R\'enyi's$ $entropy$ $(\alpha = 0)$,0.0039560831065971035,red
+50,advanced.dit.tsallis.full.0,$Tsallis$ $entropy$ $(n = 0)$,0.0036002097189959553,red
+51,fourier.stat.1byte.moment.4,$Fourier$ $4^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,0.002826694574110297,blue
+52,fourier.stat.4byte.moment.6,$Fourier$ $6^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.00186374709136441,blue
+53,fourier.stat.4byte.moment.7,$Fourier$ $7^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.0017561208361155302,blue
+54,advanced.dit.tsallis.full.4,$Tsallis$ $entropy$ $(n = 4)$,0.0016994414160713927,red
+55,fourier.stat.4byte.moment.8,$Fourier$ $8^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.0011435556055595468,blue
+56,advanced.dit.tsallis.full.8,$Tsallis$ $entropy$ $(n = 8)$,0.0007770384240178111,red
+57,advanced.dit.tsallis.full.6,$Tsallis$ $entropy$ $(n = 6)$,0.0007714702678534148,red
+58,fourier.stat.1byte.moment.5,$Fourier$ $5^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,0.0007083292821228742,blue
+59,fourier.stat.4byte.moment.9,$Fourier$ $9^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.000663340774228467,blue
+60,advanced.dit.tsallis.full.5,$Tsallis$ $entropy$ $(n = 5)$,0.0005904259597181818,red
+61,fourier.stat.4byte.moment.11,$Fourier$ $11^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.0005395960037105492,blue
+62,advanced.dit.tsallis.full.9,$Tsallis$ $entropy$ $(n = 9)$,0.00031633621480858814,red
+63,advanced.dit.tsallis.full.7,$Tsallis$ $entropy$ $(n = 7)$,0.00030333087283899226,red
+64,advanced.dit.tsallis.full.10,$Tsallis$ $entropy$ $(n = 10)$,0.0001928403493798444,red
+65,fourier.stat.4byte.moment.14,$Fourier$ $14^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.00018601676437526347,blue
+66,fourier.stat.4byte.moment.13,$Fourier$ $13^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,0.00010753100990220965,blue
+67,fourier.stat.1byte.moment.6,$Fourier$ $6^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,6.023064621107051e-05,blue
+68,fourier.stat.1byte.moment.7,$Fourier$ $7^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,3.914765381466508e-05,blue
+69,fourier.stat.4byte.moment.10,$Fourier$ $10^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,2.3789905037481887e-05,blue
+70,fourier.stat.4byte.moment.12,$Fourier$ $12^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,1.8844709298633247e-05,blue
+71,fourier.stat.1byte.moment.8,$Fourier$ $8^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,1.8009090445459024e-05,blue
+72,fourier.stat.4byte.moment.15,$Fourier$ $15^{th}$ ${central}$ ${moment}$ $(4$ $bytes)$,1.3636464524619453e-05,blue
+73,fourier.stat.1byte.moment.9,$Fourier$ $9^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,1.3286243776781487e-05,blue
+74,fourier.stat.1byte.moment.10,$Fourier$ $10^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,1.2159779477318177e-06,blue
+75,fourier.stat.1byte.moment.12,$Fourier$ $12^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,4.4002421539151095e-07,blue
+76,fourier.stat.1byte.moment.11,$Fourier$ $11^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,8.379558703597405e-08,blue
+77,fourier.stat.1byte.moment.14,$Fourier$ $14^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,0.0,blue
+78,fourier.stat.1byte.moment.15,$Fourier$ $15^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,0.0,blue
+79,fourier.stat.1byte.moment.13,$Fourier$ $13^{th}$ ${central}$ ${moment}$ $(1$ $byte)$,0.0,blue
