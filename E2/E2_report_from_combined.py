@@ -271,14 +271,14 @@ def print_latex(
 
 def save_df(df: pd.DataFrame, filename: str):
     if filename.lower().endswith(".csv") or filename.lower().endswith(".csv.gz"):
-        pd.to_csv(filename)
+        df.to_csv(filename)
     elif (
         filename.lower().endswith(".pq")
         or filename.lower().endswith(".pq.gz")
         or filename.lower().endswith(".parquet")
         or filename.lower().endswith(".parquet.gz")
     ):
-        pd.to_parquet(filename)
+        df.to_parquet(filename)
     else:
         raise Exception(f"Invalid {filename=}")
 
