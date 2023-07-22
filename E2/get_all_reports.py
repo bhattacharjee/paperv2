@@ -1,0 +1,6 @@
+"kneighbours", "kneighbours_combined_results.csv.gz",
+"lda", "lda_combined_results.csv.gz",
+"logistic-regression", "logistic_regression_combined_results.csv.gz",
+"neural-network", "neural_network_7layers_result.csv.gz",
+"qda", "qda_combined_results.csv.gz",
+"random-forest", "random_forest_combined_results.csv.gz",
