@@ -1,0 +1,65 @@
+E1
+--------------------
+baseline-advanced-and-fourier            | LDA                            | 0.129
+baseline-advanced-and-fourier-min        | LDA                            | 0.120
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - all files
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.217
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.164
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - password protected
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.590
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.526
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - office files
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.259
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.228
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E3
+--------------------
+baseline-advanced-and-fourier            | LDA                            | 0.121
+baseline-advanced-and-fourier-min        | LDA                            | 0.113
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+

@@ -1,0 +1,65 @@
+E1
+--------------------
+baseline-advanced-and-fourier            | Logistic Regression            | 0.079
+baseline-advanced-and-fourier-min        | LDA                            | 0.066
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - all files
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.182
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.121
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - password protected
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.395
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.325
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E2 - office files
+--------------------
+baseline-advanced-and-fourier            | Random Forest                  | 0.232
+baseline-advanced-and-fourier-min        | Random Forest                  | 0.184
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+E3
+--------------------
+baseline-advanced-and-fourier            | LDA                            | 0.106
+baseline-advanced-and-fourier-min        | LDA                            | 0.097
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
