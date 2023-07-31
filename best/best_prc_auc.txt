@@ -1,65 +1,75 @@
 E1
 --------------------
-baseline-advanced-and-fourier            | LDA                            | 0.127
-baseline-advanced-and-fourier-min        | LDA                            | 0.118
+baseline-advanced-and-fourier_0          | LDA                            | 0.127
+baseline-advanced-and-fourier_1          | Logistic Regression            | 0.124
+baseline-advanced-and-fourier_2          | Gaussian Naive Bayes           | 0.082
+..........
+baseline-advanced-and-fourier-min_0      | LDA                            | 0.118
+baseline-advanced-and-fourier-min_1      | Logistic Regression            | 0.113
+baseline-advanced-and-fourier-min_2      | QDA                            | 0.083
 
 
 
 --------------------------------------------------------------------------------
-
-
-
 
 
 E2 - all files
 --------------------
-baseline-advanced-and-fourier            | Random Forest                  | 0.191
-baseline-advanced-and-fourier-min        | QDA                            | 0.168
+baseline-advanced-and-fourier_0          | Random Forest                  | 0.191
+baseline-advanced-and-fourier_1          | Neural Network                 | 0.170
+baseline-advanced-and-fourier_2          | QDA                            | 0.167
+..........
+baseline-advanced-and-fourier-min_0      | QDA                            | 0.168
+baseline-advanced-and-fourier-min_1      | Gaussian Naive Bayes           | 0.160
+baseline-advanced-and-fourier-min_2      | Random Forest                  | 0.145
 
 
 
 --------------------------------------------------------------------------------
-
-
-
 
 
 E2 - password protected
 --------------------
-baseline-advanced-and-fourier            | Random Forest                  | 0.481
-baseline-advanced-and-fourier-min        | Random Forest                  | 0.424
+baseline-advanced-and-fourier_0          | Random Forest                  | 0.481
+baseline-advanced-and-fourier_1          | Neural Network                 | 0.328
+baseline-advanced-and-fourier_2          | k Nearest Neighbours           | 0.233
+..........
+baseline-advanced-and-fourier-min_0      | Random Forest                  | 0.424
+baseline-advanced-and-fourier-min_1      | Neural Network                 | 0.313
+baseline-advanced-and-fourier-min_2      | QDA                            | 0.187
 
 
 
 --------------------------------------------------------------------------------
-
-
-
 
 
 E2 - office files
 --------------------
-baseline-advanced-and-fourier            | Random Forest                  | 0.219
-baseline-advanced-and-fourier-min        | Random Forest                  | 0.194
+baseline-advanced-and-fourier_0          | Random Forest                  | 0.219
+baseline-advanced-and-fourier_1          | Neural Network                 | 0.162
+baseline-advanced-and-fourier_2          | k Nearest Neighbours           | 0.147
+..........
+baseline-advanced-and-fourier-min_0      | Random Forest                  | 0.194
+baseline-advanced-and-fourier-min_1      | Neural Network                 | 0.153
+baseline-advanced-and-fourier-min_2      | QDA                            | 0.131
 
 
 
 --------------------------------------------------------------------------------
-
-
-
 
 
 E3
 --------------------
-baseline-advanced-and-fourier            | LDA                            | 0.152
-baseline-advanced-and-fourier-min        | LDA                            | 0.143
+baseline-advanced-and-fourier_0          | LDA                            | 0.152
+baseline-advanced-and-fourier_1          | Logistic Regression            | 0.142
+baseline-advanced-and-fourier_2          | Gaussian Naive Bayes           | 0.073
+..........
+baseline-advanced-and-fourier-min_0      | LDA                            | 0.143
+baseline-advanced-and-fourier-min_1      | Logistic Regression            | 0.129
+baseline-advanced-and-fourier-min_2      | QDA                            | 0.081
 
 
 
 --------------------------------------------------------------------------------
-
-
-
 
 

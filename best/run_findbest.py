@@ -42,6 +42,3 @@ for metric in METRICS:
             print('-' * 80, file=f)
             print(file=f)
             print(file=f)
-            print(file=f)
-            print(file=f)
-            print(file=f)

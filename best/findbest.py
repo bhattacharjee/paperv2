@@ -190,24 +190,21 @@ def get_best_difference_between_two_rows(df: pd.DataFrame, row1: str, row2: str)
         models.append(m)
         differences.append(d)
     df = pd.DataFrame({"models": models, "differences": differences})
-    max_difference = df["differences"].max()
-    df = df[df["differences"] == max_difference]
-    df = df.head(1).reset_index(drop=True)
+    df.sort_values(by="differences", ascending=False, inplace=True)
+    df.reset_index(drop=True, inplace=True)
     retval = {
-        row2: BiggestDifference(
-            modelname = df.loc[0]["models"],
-            improvement = df.loc[0]["differences"]
+        f"{row2}_{i}": BiggestDifference(
+            modelname = df.loc[i]["models"],
+            improvement = df.loc[i]["differences"]
         )
+        for i in range(3)
     }
     return retval
 
 def get_best_values(df: pd.DataFrame) -> Dict[str, BiggestDifference]:
-    retval = {}
-    d = get_best_difference_between_two_rows(df, "baseline-only", "baseline-advanced-and-fourier")
-    retval.update(d)
-    d = get_best_difference_between_two_rows(df, "baseline-only", "baseline-advanced-and-fourier-min")
-    retval.update(d)
-    return retval
+    d1 = get_best_difference_between_two_rows(df, "baseline-only", "baseline-advanced-and-fourier")
+    d2 = get_best_difference_between_two_rows(df, "baseline-only", "baseline-advanced-and-fourier-min")
+    return d1, d2
 
 def main():
     parser = argparse.ArgumentParser(prog="Create summary report")
@@ -247,8 +244,11 @@ def main():
 
     metrics_and_models = get_dataframes(args.directory, args.stddev)
     summary = create_summary(metrics_and_models, metric)
-    best_values = get_best_values(summary)
-    for name, value in best_values.items():
+    best_values_1, best_values_2 = get_best_values(summary)
+    for name, value in best_values_1.items():
+        print(f"{name:40.40s} | {value.modelname:30.30s} | {value.improvement:0.3f}")
+    print('.' * 10)
+    for name, value in best_values_2.items():
         print(f"{name:40.40s} | {value.modelname:30.30s} | {value.improvement:0.3f}")
     # if args.output_file:
     #     if args.output_file.lower().endswith(
